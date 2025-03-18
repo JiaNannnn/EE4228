@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+venv/
+env/
+ENV/
+
+# Model files - uncomment if you don't want to include these
+# *.joblib
+# *.dat
+# *.bz2
+
+# Images and datasets
+debug_preprocess/
+gallery/
+external_databases/AT&T/
+
+# VS Code settings
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log 

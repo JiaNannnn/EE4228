@@ -1,81 +1,90 @@
-# Face Recognition System
+# EE4228 Face Recognition System
 
-This is a real-time face recognition system that uses computer vision techniques to detect and recognize faces using a live camera feed. The system implements both PCA (Eigenfaces) and LDA for face recognition, along with the Viola-Jones algorithm for face detection.
+A face recognition system with advanced face alignment and specialized handling for recognition challenges.
 
 ## Features
 
-- Real-time face detection using Viola-Jones algorithm
-- Face preprocessing including:
-  - Grayscale conversion
-  - Illumination normalization
-  - Size normalization
-  - Spatial position normalization
-- Face recognition using PCA and LDA
-- User-friendly GUI interface
-- Gallery management for training data
-- Live camera feed with recognition results
-
-## Requirements
-
-- Python 3.7+
-- Webcam
-- Required packages (install using `pip install -r requirements.txt`):
-  - opencv-python
-  - numpy
-  - scikit-learn
-  - scikit-image
-  - pillow
-  - matplotlib
-  - tkinter
+- **Advanced Face Detection**: Support for both Viola-Jones and PCA-based face detection
+- **Face Alignment**: Improved face alignment using facial landmarks (via dlib)
+- **Robust Preprocessing**: Enhanced preprocessing pipeline with NaN/Inf value handling
+- **Specialized Models**: Support for specialized recognition models for challenging cases
+- **User Management**: Add and manage multiple users in the system
+- **Interactive UI**: Streamlit-based UI for easy interaction
 
 ## Installation
 
-1. Clone this repository
+1. Clone the repository:
+```bash
+git clone https://github.com/JiaNannnn/EE4228.git
+cd EE4228
+```
+
 2. Install the required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
-
-1. Run the main application:
+3. Optional: Install dlib for advanced face alignment:
 ```bash
-python main.py
+pip install dlib
 ```
 
-2. To add a person to the recognition system:
-   - Enter the person's name in the "Person Name" field
-   - Click "Start Capture"
-   - The system will automatically capture 10 face images
-   - Repeat for each person you want to recognize
+4. Download the facial landmark model (if using dlib):
+```bash
+python download_dlib_model.py
+```
 
-3. After adding all persons:
-   - Click "Train Model" to train the recognition system
-   - The system will now recognize faces in real-time
+## Usage
 
-## System Components
+1. Start the application:
+```bash
+streamlit run streamlit_app.py
+```
 
-- `face_detector.py`: Implements face detection using Viola-Jones algorithm
-- `face_preprocessor.py`: Handles image preprocessing and normalization
-- `face_recognizer.py`: Implements PCA and LDA for face recognition
-- `main.py`: Main application with GUI interface
+2. Using the application:
+   - Add users in the User Management page
+   - Train the model in the Training page
+   - Use the Recognition page for real-time face recognition
+   - Configure detector settings in the Detector Settings page
 
-## Notes
+## Advanced Features
 
-- The system requires good lighting conditions for optimal performance
-- Face images should be at least 90x90 pixels
-- The person should face the camera directly for best results
-- At least 10 face images per person are recommended for training
-- The confidence threshold for recognition is set to 0.6 (can be adjusted in the code)
+### Face Alignment
+
+The system uses dlib's facial landmark detection for improved face alignment, which helps with:
+- Consistent eye positioning
+- Better handling of head rotations
+- Improved recognition accuracy
+
+### Specialized Models
+
+For users with recognition challenges, the system can create specialized models:
+- Lower confidence thresholds
+- Improved handling of edge cases
+- Better temporal consistency
+
+## System Requirements
+
+- Python 3.8+
+- Webcam
+- 4GB RAM minimum (8GB recommended)
+- Windows/Mac/Linux
 
 ## Troubleshooting
 
-1. If the camera doesn't start:
-   - Check if your webcam is properly connected
-   - Make sure no other application is using the camera
+### NaN Value Issues
 
-2. If recognition accuracy is low:
-   - Ensure good lighting conditions
-   - Add more training images
-   - Adjust the confidence threshold in the code
-   - Make sure faces are well-aligned during capture 
+If you encounter NaN value errors:
+1. Check that face preprocessing is working correctly
+2. Verify that face alignment is enabled
+3. Use the specialized model for challenging cases
+
+### Camera Not Working
+
+1. Ensure webcam permissions are granted
+2. Try restarting the application
+3. Check that no other application is using the webcam
+
+## License
+
+MIT License 

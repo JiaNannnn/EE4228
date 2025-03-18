@@ -31,12 +31,26 @@ class PCAFaceDetector:
             X_faces = self._prepare_data(face_images)
             X_non_faces = self._prepare_data(non_face_images)
             
+            # Check for NaN values
+            if np.isnan(X_faces).any():
+                print("Warning: NaN values detected in face images. Replacing with zeros.")
+                X_faces = np.nan_to_num(X_faces, nan=0.0)
+                
+            if np.isnan(X_non_faces).any():
+                print("Warning: NaN values detected in non-face images. Replacing with zeros.")
+                X_non_faces = np.nan_to_num(X_non_faces, nan=0.0)
+            
             # Combine datasets
             X = np.vstack([X_faces, X_non_faces])
             y = np.hstack([np.ones(len(X_faces)), np.zeros(len(X_non_faces))])
             
             # Scale data
             X_scaled = self.scaler.fit_transform(X)
+            
+            # Check for NaN values after scaling
+            if np.isnan(X_scaled).any():
+                print("Warning: NaN values detected after scaling. Replacing with zeros.")
+                X_scaled = np.nan_to_num(X_scaled, nan=0.0)
             
             # Train PCA
             self.pca.fit(X_scaled)
@@ -96,20 +110,38 @@ class PCAFaceDetector:
                     # Resize window to target size
                     window_resized = cv2.resize(window, self.target_size)
                     
-                    # Prepare for PCA
-                    X = self._prepare_data(window_resized)
-                    X_scaled = self.scaler.transform(X)
-                    
-                    # Project and reconstruct
-                    X_pca = self.pca.transform(X_scaled)
-                    X_rec = self.pca.inverse_transform(X_pca)
-                    
-                    # Compute reconstruction error
-                    rec_error = np.mean(np.square(X_scaled - X_rec))
-                    
-                    # If error is below threshold, it's a face
-                    if rec_error < self.threshold:
-                        faces.append((x, y, window_w, window_h))
+                    try:
+                        # Prepare for PCA
+                        X = self._prepare_data(window_resized)
+                        
+                        # Check for NaN values
+                        if np.isnan(X).any():
+                            continue  # Skip this window
+                            
+                        X_scaled = self.scaler.transform(X)
+                        
+                        # Check for NaN values after scaling
+                        if np.isnan(X_scaled).any():
+                            continue  # Skip this window
+                        
+                        # Project and reconstruct
+                        X_pca = self.pca.transform(X_scaled)
+                        
+                        # Check for NaN values after PCA
+                        if np.isnan(X_pca).any():
+                            continue  # Skip this window
+                            
+                        X_rec = self.pca.inverse_transform(X_pca)
+                        
+                        # Compute reconstruction error
+                        rec_error = np.mean(np.square(X_scaled - X_rec))
+                        
+                        # If error is below threshold, it's a face
+                        if rec_error < self.threshold:
+                            faces.append((x, y, window_w, window_h))
+                    except Exception as e:
+                        # Skip this window if any error occurs
+                        continue
             
             # Increase scale
             current_scale *= scale_factor
