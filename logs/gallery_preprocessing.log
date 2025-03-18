@@ -1,0 +1,770 @@
+2025-03-17 22:38:29,135 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:38:29,188 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:38:29,188 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:38:29,188 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:38:29,188 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:38:29,191 - gallery_preprocessing - INFO - Found 7 user directories in gallery
+2025-03-17 22:38:29,191 - gallery_preprocessing - INFO - Processing user: Eden
+2025-03-17 22:38:31,204 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51 (1).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:32,053 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51 (2).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:32,578 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:33,249 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52 (1).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:33,855 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52 (2).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:34,386 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:34,602 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg. Using the largest one.
+2025-03-17 22:38:35,530 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:36,846 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (2).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:37,065 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53.jpeg. Using the largest one.
+2025-03-17 22:38:37,672 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:38,217 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.54.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:38,217 - gallery_preprocessing - INFO - Processed 0/10 images for user Eden
+2025-03-17 22:38:38,219 - gallery_preprocessing - INFO - Processing user: Hein(Thomas)
+2025-03-17 22:38:38,258 - gallery_preprocessing - WARNING - No face detected in image: gallery\Hein(Thomas)\IMG-20250312-WA0001.jpg
+2025-03-17 22:38:38,670 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0002.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:39,133 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0003.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:39,411 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:39,411 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:39,687 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0005.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:40,168 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0006.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:40,204 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Hein(Thomas)\IMG-20250312-WA0007.jpg. Using the largest one.
+2025-03-17 22:38:40,263 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0007.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:40,503 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0008.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:40,812 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0009.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:40,812 - gallery_preprocessing - INFO - Processed 1/9 images for user Hein(Thomas)
+2025-03-17 22:38:40,814 - gallery_preprocessing - INFO - Processing user: JiaNan
+2025-03-17 22:38:40,970 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_22_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:41,255 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_23_Pro (2).jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:41,499 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_23_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:41,622 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_25_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:41,898 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_26_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:42,051 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_27_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:42,185 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_31_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:42,326 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_32_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:42,450 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_33_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:42,649 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_34_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:42,649 - gallery_preprocessing - INFO - Processed 0/10 images for user JiaNan
+2025-03-17 22:38:42,649 - gallery_preprocessing - INFO - Processing user: Pengwei
+2025-03-17 22:38:42,944 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012606334.jpg
+2025-03-17 22:38:43,402 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012607908.jpg
+2025-03-17 22:38:43,935 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012609523.jpg
+2025-03-17 22:38:44,410 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:44,410 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:45,166 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Pengwei\mmexport1742012612553.jpg. Using the largest one.
+2025-03-17 22:38:45,366 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:45,366 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:45,829 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012614161.jpg
+2025-03-17 22:38:48,495 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012615616.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:49,006 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:49,006 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:49,423 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012618789.jpg
+2025-03-17 22:38:49,963 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:49,963 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:49,963 - gallery_preprocessing - INFO - Processed 4/10 images for user Pengwei
+2025-03-17 22:38:49,967 - gallery_preprocessing - INFO - Processing user: XianJie
+2025-03-17 22:38:50,171 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834559399.jpg
+2025-03-17 22:38:50,261 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834561641.jpg
+2025-03-17 22:38:50,386 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834563331.jpg
+2025-03-17 22:38:50,766 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834565080.jpg
+2025-03-17 22:38:50,997 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834566919.jpg
+2025-03-17 22:38:51,132 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:51,132 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:51,391 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834570585.jpg
+2025-03-17 22:38:51,682 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834572501.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:51,960 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834574290.jpg
+2025-03-17 22:38:52,095 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834575894.jpg
+2025-03-17 22:38:52,095 - gallery_preprocessing - INFO - Processed 1/10 images for user XianJie
+2025-03-17 22:38:52,095 - gallery_preprocessing - INFO - Processing user: Xuyang
+2025-03-17 22:38:53,683 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012580162.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:54,155 - gallery_preprocessing - INFO - Multiple faces (3) detected in gallery\Xuyang\mmexport1742012581707.jpg. Using the largest one.
+2025-03-17 22:38:54,169 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:54,169 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:54,580 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:54,580 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:55,027 - gallery_preprocessing - WARNING - No face detected in image: gallery\Xuyang\mmexport1742012584718.jpg
+2025-03-17 22:38:55,474 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:55,475 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:55,959 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:55,959 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:56,259 - gallery_preprocessing - WARNING - No face detected in image: gallery\Xuyang\mmexport1742012589143.jpg
+2025-03-17 22:38:56,702 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Xuyang\mmexport1742012590683.jpg. Using the largest one.
+2025-03-17 22:38:58,019 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012590683.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:38:58,267 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:38:58,270 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:38:58,684 - gallery_preprocessing - WARNING - No face detected in image: gallery\Xuyang\mmexport1742012593638.jpg
+2025-03-17 22:38:58,684 - gallery_preprocessing - INFO - Processed 5/10 images for user Xuyang
+2025-03-17 22:38:58,684 - gallery_preprocessing - INFO - Processing user: ZheKai
+2025-03-17 22:38:59,056 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834586128.jpg
+2025-03-17 22:38:59,467 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834591112.jpg
+2025-03-17 22:38:59,957 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834596085.jpg
+2025-03-17 22:39:00,360 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834600411.jpg
+2025-03-17 22:39:00,925 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:00,925 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:01,529 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834618806.jpg
+2025-03-17 22:39:02,040 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:02,040 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:02,458 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834625179.jpg
+2025-03-17 22:39:03,091 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834626948.jpg
+2025-03-17 22:39:03,641 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:03,641 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:04,215 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:04,218 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:04,285 - gallery_preprocessing - INFO - Processed 4/11 images for user ZheKai
+2025-03-17 22:39:04,287 - gallery_preprocessing - INFO - Preprocessing complete: 5 users, 15 images processed
+2025-03-17 22:39:04,287 - gallery_preprocessing - INFO - Failed: 55 images
+2025-03-17 22:39:04,287 - gallery_preprocessing - INFO - Training model with preprocessed data...
+2025-03-17 22:39:04,288 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:39:04,370 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:39:04,370 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:39:04,370 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:39:04,370 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:39:04,370 - gallery_preprocessing - INFO - Processing user Eden...
+2025-03-17 22:39:04,370 - gallery_preprocessing - INFO - Processing user Hein(Thomas)...
+2025-03-17 22:39:04,387 - gallery_preprocessing - INFO - Processing user JiaNan...
+2025-03-17 22:39:04,388 - gallery_preprocessing - INFO - Processing user Pengwei...
+2025-03-17 22:39:04,437 - gallery_preprocessing - INFO - Processing user XianJie...
+2025-03-17 22:39:04,449 - gallery_preprocessing - INFO - Processing user Xuyang...
+2025-03-17 22:39:04,614 - gallery_preprocessing - INFO - Processing user ZheKai...
+2025-03-17 22:39:04,665 - gallery_preprocessing - INFO - Training with 15 images from 7 users
+2025-03-17 22:39:04,732 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:04,732 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:04,753 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:04,753 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:04,980 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:04,981 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:04,994 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:04,994 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,005 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,005 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,030 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,030 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,047 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,047 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,050 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,053 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,073 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,073 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,086 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,086 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,091 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,091 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,188 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,188 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,415 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,415 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,471 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,471 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,567 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:05,567 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:05,567 - gallery_preprocessing - ERROR - Error training model: cannot reshape array of size 78400 into shape (10000,)
+2025-03-17 22:39:05,580 - gallery_preprocessing - WARNING - Model training failed
+2025-03-17 22:39:34,603 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:39:34,657 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:39:34,657 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:39:34,657 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:39:34,657 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:39:34,658 - gallery_preprocessing - INFO - Found 7 user directories in gallery
+2025-03-17 22:39:34,658 - gallery_preprocessing - INFO - Processing user: Eden
+2025-03-17 22:39:35,997 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51 (1).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:36,566 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51 (2).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:37,156 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:37,762 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52 (1).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:38,326 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52 (2).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:38,995 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:39,183 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg. Using the largest one.
+2025-03-17 22:39:40,119 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:41,253 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (2).jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:41,461 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53.jpeg. Using the largest one.
+2025-03-17 22:39:41,886 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:42,420 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.54.jpeg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:42,420 - gallery_preprocessing - INFO - Processed 0/10 images for user Eden
+2025-03-17 22:39:42,420 - gallery_preprocessing - INFO - Processing user: Hein(Thomas)
+2025-03-17 22:39:42,449 - gallery_preprocessing - WARNING - No face detected in image: gallery\Hein(Thomas)\IMG-20250312-WA0001.jpg
+2025-03-17 22:39:42,748 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0002.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:43,006 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0003.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:43,091 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:43,091 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:43,192 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0005.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:43,492 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0006.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:43,517 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Hein(Thomas)\IMG-20250312-WA0007.jpg. Using the largest one.
+2025-03-17 22:39:43,571 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0007.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:43,693 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0008.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:43,802 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0009.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:43,802 - gallery_preprocessing - INFO - Processed 1/9 images for user Hein(Thomas)
+2025-03-17 22:39:43,802 - gallery_preprocessing - INFO - Processing user: JiaNan
+2025-03-17 22:39:43,916 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_22_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,018 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_23_Pro (2).jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,126 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_23_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,223 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_25_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,335 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_26_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,427 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_27_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,558 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_31_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,688 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_32_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,801 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_33_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,935 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_34_Pro.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:44,937 - gallery_preprocessing - INFO - Processed 0/10 images for user JiaNan
+2025-03-17 22:39:44,937 - gallery_preprocessing - INFO - Processing user: Pengwei
+2025-03-17 22:39:45,192 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012606334.jpg
+2025-03-17 22:39:45,477 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012607908.jpg
+2025-03-17 22:39:45,853 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012609523.jpg
+2025-03-17 22:39:46,174 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:46,174 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:46,648 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Pengwei\mmexport1742012612553.jpg. Using the largest one.
+2025-03-17 22:39:46,865 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:46,865 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:47,193 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012614161.jpg
+2025-03-17 22:39:49,674 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012615616.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:50,028 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:50,028 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:50,317 - gallery_preprocessing - WARNING - No face detected in image: gallery\Pengwei\mmexport1742012618789.jpg
+2025-03-17 22:39:50,877 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:50,877 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:50,879 - gallery_preprocessing - INFO - Processed 4/10 images for user Pengwei
+2025-03-17 22:39:50,881 - gallery_preprocessing - INFO - Processing user: XianJie
+2025-03-17 22:39:50,982 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834559399.jpg
+2025-03-17 22:39:51,069 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834561641.jpg
+2025-03-17 22:39:51,189 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834563331.jpg
+2025-03-17 22:39:51,355 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834565080.jpg
+2025-03-17 22:39:51,458 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834566919.jpg
+2025-03-17 22:39:51,611 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:51,611 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:51,748 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834570585.jpg
+2025-03-17 22:39:51,932 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834572501.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:52,043 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834574290.jpg
+2025-03-17 22:39:52,167 - gallery_preprocessing - WARNING - No face detected in image: gallery\XianJie\mmexport1741834575894.jpg
+2025-03-17 22:39:52,167 - gallery_preprocessing - INFO - Processed 1/10 images for user XianJie
+2025-03-17 22:39:52,169 - gallery_preprocessing - INFO - Processing user: Xuyang
+2025-03-17 22:39:53,896 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012580162.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:54,154 - gallery_preprocessing - INFO - Multiple faces (3) detected in gallery\Xuyang\mmexport1742012581707.jpg. Using the largest one.
+2025-03-17 22:39:54,174 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:54,174 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:54,519 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:54,519 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:54,815 - gallery_preprocessing - WARNING - No face detected in image: gallery\Xuyang\mmexport1742012584718.jpg
+2025-03-17 22:39:55,143 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:55,143 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:55,462 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:55,462 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:55,769 - gallery_preprocessing - WARNING - No face detected in image: gallery\Xuyang\mmexport1742012589143.jpg
+2025-03-17 22:39:56,021 - gallery_preprocessing - INFO - Multiple faces (2) detected in gallery\Xuyang\mmexport1742012590683.jpg. Using the largest one.
+2025-03-17 22:39:57,653 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012590683.jpg: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:39:57,967 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:39:57,968 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:39:58,237 - gallery_preprocessing - WARNING - No face detected in image: gallery\Xuyang\mmexport1742012593638.jpg
+2025-03-17 22:39:58,237 - gallery_preprocessing - INFO - Processed 5/10 images for user Xuyang
+2025-03-17 22:39:58,237 - gallery_preprocessing - INFO - Processing user: ZheKai
+2025-03-17 22:39:58,513 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834586128.jpg
+2025-03-17 22:39:58,991 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834591112.jpg
+2025-03-17 22:39:59,502 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834596085.jpg
+2025-03-17 22:39:59,840 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834600411.jpg
+2025-03-17 22:40:00,410 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:40:00,410 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:40:00,912 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834618806.jpg
+2025-03-17 22:40:01,569 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:40:01,569 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:40:01,901 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834625179.jpg
+2025-03-17 22:40:02,241 - gallery_preprocessing - WARNING - No face detected in image: gallery\ZheKai\mmexport1741834626948.jpg
+2025-03-17 22:40:02,693 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:40:02,693 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:40:03,116 - face_detector - WARNING - Could not detect eyes in face image
+2025-03-17 22:40:03,116 - face_preprocessor - WARNING - Could not detect eyes for face alignment
+2025-03-17 22:40:03,123 - gallery_preprocessing - INFO - Processed 4/11 images for user ZheKai
+2025-03-17 22:40:03,123 - gallery_preprocessing - INFO - Preprocessing complete: 5 users, 15 images processed
+2025-03-17 22:40:03,123 - gallery_preprocessing - INFO - Failed: 55 images
+2025-03-17 22:40:03,123 - gallery_preprocessing - INFO - Training model with preprocessed data...
+2025-03-17 22:40:03,123 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:40:03,186 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:40:03,186 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:40:03,186 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:40:03,186 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:40:03,189 - gallery_preprocessing - INFO - Processing user Eden...
+2025-03-17 22:40:03,189 - gallery_preprocessing - WARNING - No images found for user Eden
+2025-03-17 22:40:03,189 - gallery_preprocessing - INFO - Processing user Hein(Thomas)...
+2025-03-17 22:40:03,324 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Hein(Thomas)\face_1.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,324 - gallery_preprocessing - INFO - Processing user JiaNan...
+2025-03-17 22:40:03,324 - gallery_preprocessing - WARNING - No images found for user JiaNan
+2025-03-17 22:40:03,328 - gallery_preprocessing - INFO - Processing user Pengwei...
+2025-03-17 22:40:03,343 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Pengwei\face_1.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,358 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Pengwei\face_2.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,365 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Pengwei\face_3.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,382 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Pengwei\face_4.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,382 - gallery_preprocessing - INFO - Processing user XianJie...
+2025-03-17 22:40:03,396 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\XianJie\face_1.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,396 - gallery_preprocessing - INFO - Processing user Xuyang...
+2025-03-17 22:40:03,408 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Xuyang\face_1.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,408 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Xuyang\face_2.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,419 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Xuyang\face_3.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,434 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Xuyang\face_4.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,435 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\Xuyang\face_5.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,435 - gallery_preprocessing - INFO - Processing user ZheKai...
+2025-03-17 22:40:03,451 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\ZheKai\face_1.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,465 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\ZheKai\face_2.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,476 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\ZheKai\face_3.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,485 - gallery_preprocessing - ERROR - Error processing image D:\Tools\4228\Facial Recognition\data\users\ZheKai\face_4.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:03,485 - gallery_preprocessing - WARNING - Not enough images for training. At least 5 images are required.
+2025-03-17 22:40:03,485 - gallery_preprocessing - WARNING - Model training failed
+2025-03-17 22:40:43,548 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:40:43,606 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:40:43,606 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:40:43,606 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:40:43,606 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:40:43,606 - gallery_preprocessing - INFO - Found 7 user directories in gallery
+2025-03-17 22:40:43,609 - gallery_preprocessing - INFO - Processing user: Eden
+2025-03-17 22:40:43,916 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51 (1).jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:44,121 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51 (2).jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:44,309 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.51.jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:44,516 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52 (1).jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:44,709 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52 (2).jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:44,894 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.52.jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,092 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,308 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53 (2).jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,526 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.53.jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,733 - gallery_preprocessing - ERROR - Error processing image gallery\Eden\WhatsApp Image 2025-03-17 at 10.24.54.jpeg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,733 - gallery_preprocessing - INFO - Processed 0/10 images for user Eden
+2025-03-17 22:40:45,733 - gallery_preprocessing - INFO - Processing user: Hein(Thomas)
+2025-03-17 22:40:45,756 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0001.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:45,798 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0002.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,843 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0003.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,885 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0004.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,923 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0005.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,968 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0006.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:45,995 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0007.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,025 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0008.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,069 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0009.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,069 - gallery_preprocessing - INFO - Processed 0/9 images for user Hein(Thomas)
+2025-03-17 22:40:46,069 - gallery_preprocessing - INFO - Processing user: JiaNan
+2025-03-17 22:40:46,094 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_22_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,109 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_23_Pro (2).jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,128 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_23_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,147 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_25_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,165 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_26_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,187 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_27_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,211 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_31_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,229 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_32_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,250 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_33_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,278 - gallery_preprocessing - ERROR - Error processing image gallery\JiaNan\WIN_20250315_13_16_34_Pro.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:46,281 - gallery_preprocessing - INFO - Processed 0/10 images for user JiaNan
+2025-03-17 22:40:46,281 - gallery_preprocessing - INFO - Processing user: Pengwei
+2025-03-17 22:40:46,531 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012606334.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:46,824 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012607908.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:47,195 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012609523.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:47,531 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012611048.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:47,979 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012612553.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:48,314 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012614161.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:48,671 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012615616.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:48,935 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012617230.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:49,156 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012618789.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:49,612 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012620535.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:49,614 - gallery_preprocessing - INFO - Processed 0/10 images for user Pengwei
+2025-03-17 22:40:49,614 - gallery_preprocessing - INFO - Processing user: XianJie
+2025-03-17 22:40:49,693 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834559399.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:49,766 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834561641.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:49,874 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834563331.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:50,003 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834565080.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:50,089 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834566919.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:50,182 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834568683.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:50,307 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834570585.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:50,366 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834572501.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:50,450 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834574290.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:50,552 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834575894.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:50,552 - gallery_preprocessing - INFO - Processed 0/10 images for user XianJie
+2025-03-17 22:40:50,554 - gallery_preprocessing - INFO - Processing user: Xuyang
+2025-03-17 22:40:50,739 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012580162.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:50,946 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012581707.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:51,220 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012583249.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:51,440 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012584718.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:51,698 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012586191.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:51,954 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012587719.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:52,215 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012589143.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:52,405 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012590683.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:52,656 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012592127.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:52,850 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012593638.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:52,850 - gallery_preprocessing - INFO - Processed 0/10 images for user Xuyang
+2025-03-17 22:40:52,850 - gallery_preprocessing - INFO - Processing user: ZheKai
+2025-03-17 22:40:53,119 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834586128.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:53,428 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834591112.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:53,756 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834596085.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:53,979 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834600411.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:54,275 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834606632.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:54,641 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834618806.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:54,979 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834620866.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:55,272 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834625179.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:55,546 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834626948.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 22:40:55,831 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834629297.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:56,112 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834630812.jpg: OpenCV(4.11.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'dsize'. Sequence item with index 0 has a wrong type
+
+2025-03-17 22:40:56,114 - gallery_preprocessing - INFO - Processed 0/11 images for user ZheKai
+2025-03-17 22:40:56,114 - gallery_preprocessing - INFO - Preprocessing complete: 0 users, 0 images processed
+2025-03-17 22:40:56,114 - gallery_preprocessing - INFO - Failed: 70 images
+2025-03-17 23:32:27,681 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:32:27,733 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:32:27,733 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:32:27,733 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:32:27,733 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:32:27,736 - gallery_preprocessing - INFO - Found 7 user directories in gallery
+2025-03-17 23:32:27,736 - gallery_preprocessing - INFO - Processing user: Eden
+2025-03-17 23:32:27,737 - gallery_preprocessing - INFO - User Eden already exists. Skipping.
+2025-03-17 23:32:27,737 - gallery_preprocessing - INFO - Processing user: Hein(Thomas)
+2025-03-17 23:32:27,738 - gallery_preprocessing - INFO - User Hein(Thomas) already exists. Skipping.
+2025-03-17 23:32:27,738 - gallery_preprocessing - INFO - Processing user: JiaNan
+2025-03-17 23:32:27,739 - gallery_preprocessing - INFO - User JiaNan already exists. Skipping.
+2025-03-17 23:32:27,739 - gallery_preprocessing - INFO - Processing user: Pengwei
+2025-03-17 23:32:27,739 - gallery_preprocessing - INFO - User Pengwei already exists. Skipping.
+2025-03-17 23:32:27,740 - gallery_preprocessing - INFO - Processing user: XianJie
+2025-03-17 23:32:27,740 - gallery_preprocessing - INFO - User XianJie already exists. Skipping.
+2025-03-17 23:32:27,740 - gallery_preprocessing - INFO - Processing user: Xuyang
+2025-03-17 23:32:27,741 - gallery_preprocessing - INFO - User Xuyang already exists. Skipping.
+2025-03-17 23:32:27,741 - gallery_preprocessing - INFO - Processing user: ZheKai
+2025-03-17 23:32:27,741 - gallery_preprocessing - INFO - User ZheKai already exists. Skipping.
+2025-03-17 23:32:27,742 - gallery_preprocessing - INFO - Preprocessing complete: 0 users, 0 images processed
+2025-03-17 23:32:27,742 - gallery_preprocessing - INFO - Failed: 0 images
+2025-03-17 23:34:36,916 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:34:36,964 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:34:36,964 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:34:36,964 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:34:36,964 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:34:36,964 - gallery_preprocessing - INFO - Found 7 user directories in gallery
+2025-03-17 23:34:36,964 - gallery_preprocessing - INFO - Processing user: Eden
+2025-03-17 23:34:41,365 - gallery_preprocessing - INFO - Processed 10/10 images for user Eden
+2025-03-17 23:34:41,365 - gallery_preprocessing - INFO - Processing user: Hein(Thomas)
+2025-03-17 23:34:41,454 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0001.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:42,822 - gallery_preprocessing - INFO - Processed 8/9 images for user Hein(Thomas)
+2025-03-17 23:34:42,822 - gallery_preprocessing - INFO - Processing user: JiaNan
+2025-03-17 23:34:43,814 - gallery_preprocessing - INFO - Processed 10/10 images for user JiaNan
+2025-03-17 23:34:43,815 - gallery_preprocessing - INFO - Processing user: Pengwei
+2025-03-17 23:34:44,205 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012606334.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:44,672 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012607908.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:45,346 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012609523.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:47,384 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012614161.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:49,122 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012618789.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:50,112 - gallery_preprocessing - INFO - Processed 5/10 images for user Pengwei
+2025-03-17 23:34:50,114 - gallery_preprocessing - INFO - Processing user: XianJie
+2025-03-17 23:34:50,237 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834559399.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:50,395 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834561641.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:50,621 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834563331.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:51,235 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834566919.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:51,518 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834570585.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:51,866 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834574290.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:52,071 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834575894.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:52,071 - gallery_preprocessing - INFO - Processed 3/10 images for user XianJie
+2025-03-17 23:34:52,071 - gallery_preprocessing - INFO - Processing user: Xuyang
+2025-03-17 23:34:56,736 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012593638.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:34:56,736 - gallery_preprocessing - INFO - Processed 9/10 images for user Xuyang
+2025-03-17 23:34:56,736 - gallery_preprocessing - INFO - Processing user: ZheKai
+2025-03-17 23:34:58,461 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834596085.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:35:01,207 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834625179.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:35:02,751 - gallery_preprocessing - INFO - Processed 9/11 images for user ZheKai
+2025-03-17 23:35:02,751 - gallery_preprocessing - INFO - Preprocessing complete: 7 users, 54 images processed
+2025-03-17 23:35:02,751 - gallery_preprocessing - INFO - Failed: 16 images
+2025-03-17 23:35:02,751 - gallery_preprocessing - INFO - Training model with preprocessed data...
+2025-03-17 23:35:02,751 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:35:02,798 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:35:02,798 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:35:02,798 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:35:02,798 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:35:02,798 - gallery_preprocessing - INFO - Processing user Eden...
+2025-03-17 23:35:03,057 - gallery_preprocessing - INFO - Processing user Hein(Thomas)...
+2025-03-17 23:35:03,169 - gallery_preprocessing - INFO - Processing user JiaNan...
+2025-03-17 23:35:03,487 - gallery_preprocessing - INFO - Processing user Pengwei...
+2025-03-17 23:35:03,579 - gallery_preprocessing - INFO - Processing user XianJie...
+2025-03-17 23:35:03,758 - gallery_preprocessing - INFO - Processing user Xuyang...
+2025-03-17 23:35:03,917 - gallery_preprocessing - INFO - Processing user ZheKai...
+2025-03-17 23:35:04,187 - gallery_preprocessing - INFO - Training with 54 images from 7 users
+2025-03-17 23:35:04,187 - gallery_preprocessing - ERROR - Error training model: 'list' object has no attribute 'shape'
+2025-03-17 23:35:04,187 - gallery_preprocessing - WARNING - Model training failed
+2025-03-17 23:46:44,810 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:46:44,867 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:46:44,867 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:46:44,867 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:46:44,867 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:46:44,867 - gallery_preprocessing - INFO - Found 7 user directories in gallery
+2025-03-17 23:46:44,867 - gallery_preprocessing - INFO - Processing user: Eden
+2025-03-17 23:46:49,040 - gallery_preprocessing - INFO - Processed 10/10 images for user Eden
+2025-03-17 23:46:49,040 - gallery_preprocessing - INFO - Processing user: Hein(Thomas)
+2025-03-17 23:46:49,123 - gallery_preprocessing - ERROR - Error processing image gallery\Hein(Thomas)\IMG-20250312-WA0001.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:50,089 - gallery_preprocessing - INFO - Processed 8/9 images for user Hein(Thomas)
+2025-03-17 23:46:50,089 - gallery_preprocessing - INFO - Processing user: JiaNan
+2025-03-17 23:46:50,895 - gallery_preprocessing - INFO - Processed 10/10 images for user JiaNan
+2025-03-17 23:46:50,911 - gallery_preprocessing - INFO - Processing user: Pengwei
+2025-03-17 23:46:51,456 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012606334.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:52,039 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012607908.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:52,584 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012609523.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:54,588 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012614161.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:56,074 - gallery_preprocessing - ERROR - Error processing image gallery\Pengwei\mmexport1742012618789.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:56,847 - gallery_preprocessing - INFO - Processed 5/10 images for user Pengwei
+2025-03-17 23:46:56,852 - gallery_preprocessing - INFO - Processing user: XianJie
+2025-03-17 23:46:56,959 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834559399.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:57,072 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834561641.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:57,208 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834563331.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:57,572 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834566919.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:57,837 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834570585.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:58,052 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834574290.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:58,189 - gallery_preprocessing - ERROR - Error processing image gallery\XianJie\mmexport1741834575894.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:46:58,189 - gallery_preprocessing - INFO - Processed 3/10 images for user XianJie
+2025-03-17 23:46:58,189 - gallery_preprocessing - INFO - Processing user: Xuyang
+2025-03-17 23:47:02,815 - gallery_preprocessing - ERROR - Error processing image gallery\Xuyang\mmexport1742012593638.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:47:02,815 - gallery_preprocessing - INFO - Processed 9/10 images for user Xuyang
+2025-03-17 23:47:02,817 - gallery_preprocessing - INFO - Processing user: ZheKai
+2025-03-17 23:47:04,303 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834596085.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:47:06,868 - gallery_preprocessing - ERROR - Error processing image gallery\ZheKai\mmexport1741834625179.jpg: FaceDetector.detect_faces() got an unexpected keyword argument 'scale_factor'
+2025-03-17 23:47:08,298 - gallery_preprocessing - INFO - Processed 9/11 images for user ZheKai
+2025-03-17 23:47:08,300 - gallery_preprocessing - INFO - Preprocessing complete: 7 users, 54 images processed
+2025-03-17 23:47:08,300 - gallery_preprocessing - INFO - Failed: 16 images
+2025-03-17 23:47:08,300 - gallery_preprocessing - INFO - Training model with preprocessed data...
+2025-03-17 23:47:08,300 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:47:08,346 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:47:08,346 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:47:08,346 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:47:08,346 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:47:08,346 - gallery_preprocessing - INFO - Processing user Eden...
+2025-03-17 23:47:08,518 - gallery_preprocessing - INFO - Processing user Hein(Thomas)...
+2025-03-17 23:47:08,636 - gallery_preprocessing - INFO - Processing user JiaNan...
+2025-03-17 23:47:08,788 - gallery_preprocessing - INFO - Processing user Pengwei...
+2025-03-17 23:47:08,881 - gallery_preprocessing - INFO - Processing user XianJie...
+2025-03-17 23:47:08,913 - gallery_preprocessing - INFO - Processing user Xuyang...
+2025-03-17 23:47:09,050 - gallery_preprocessing - INFO - Processing user ZheKai...
+2025-03-17 23:47:09,198 - gallery_preprocessing - INFO - Training with 54 images from 7 users
+2025-03-17 23:47:09,198 - gallery_preprocessing - ERROR - Error training model: 'list' object has no attribute 'shape'
+2025-03-17 23:47:09,198 - gallery_preprocessing - WARNING - Model training failed

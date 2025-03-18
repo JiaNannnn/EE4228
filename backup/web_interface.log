@@ -1,0 +1,59 @@
+2025-03-15 17:46:24,122 - WebInterface - ERROR - Error importing config: cannot import name 'Config' from 'config' (D:\Tools\4228\Facial Recognition\config.py)
+2025-03-15 17:46:24,125 - WebInterface - ERROR - Failed to import required modules. The system may run with limited functionality.
+2025-03-15 17:46:24,126 - WebInterface - WARNING - System initialized with limited functionality due to missing modules
+2025-03-15 17:46:24,127 - WebInterface - INFO - Starting web server on 0.0.0.0:8000
+2025-03-15 17:46:24,281 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.91.135.150:8000
+2025-03-15 17:46:24,281 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 17:46:39,581 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:46:39] "GET / HTTP/1.1" 200 -
+2025-03-15 17:46:39,746 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:46:39] "GET / HTTP/1.1" 200 -
+2025-03-15 17:46:39,879 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:46:39] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-15 17:46:39,885 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:46:39] "GET /static/script.js HTTP/1.1" 200 -
+2025-03-15 17:46:39,998 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:46:39] "GET /api/get_status HTTP/1.1" 200 -
+2025-03-15 17:46:39,999 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:46:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-15 17:46:51,258 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:46:51] "POST /api/train_model HTTP/1.1" 200 -
+2025-03-15 17:47:01,117 - web_interface - ERROR - Exception on /api/start_stream [POST]
+Traceback (most recent call last):
+  File "C:\Users\nan.jia\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nan.jia\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nan.jia\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nan.jia\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Tools\4228\Facial Recognition\web_interface.py", line 403, in api_start_stream
+    if start_streaming():
+       ^^^^^^^^^^^^^^^^^
+  File "D:\Tools\4228\Facial Recognition\web_interface.py", line 345, in start_streaming
+    if not camera.start():
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'start'
+2025-03-15 17:47:01,130 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:47:01] "[35m[1mPOST /api/start_stream HTTP/1.1[0m" 500 -
+2025-03-15 17:48:13,824 - WebInterface - ERROR - Error importing config: cannot import name 'Config' from 'config' (D:\Tools\4228\Facial Recognition\config.py)
+2025-03-15 17:48:13,827 - WebInterface - ERROR - Failed to import required modules. The system may run with limited functionality.
+2025-03-15 17:48:13,827 - WebInterface - INFO - Camera initialized successfully
+2025-03-15 17:48:13,828 - WebInterface - ERROR - Error initializing recognition components: name 'HybridFaceDetector' is not defined
+2025-03-15 17:48:13,828 - WebInterface - WARNING - System initialized with limited functionality due to missing modules
+2025-03-15 17:48:13,829 - WebInterface - INFO - Starting web server on 0.0.0.0:8000
+2025-03-15 17:48:13,851 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.91.135.150:8000
+2025-03-15 17:48:13,852 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 17:48:19,410 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:19] "GET / HTTP/1.1" 200 -
+2025-03-15 17:48:19,441 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:19] "GET / HTTP/1.1" 200 -
+2025-03-15 17:48:19,503 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-15 17:48:19,503 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:19] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-15 17:48:19,526 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:19] "GET /api/get_status HTTP/1.1" 200 -
+2025-03-15 17:48:21,661 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:21] "GET / HTTP/1.1" 200 -
+2025-03-15 17:48:21,687 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-15 17:48:21,689 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:21] "GET / HTTP/1.1" 200 -
+2025-03-15 17:48:21,690 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:21] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-03-15 17:48:21,703 - werkzeug - INFO - 127.0.0.1 - - [15/Mar/2025 17:48:21] "GET /api/get_status HTTP/1.1" 200 -

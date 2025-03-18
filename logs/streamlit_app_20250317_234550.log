@@ -1,0 +1,16 @@
+2025-03-17 23:45:50,976 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:45:51,095 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:45:51,102 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:45:51,102 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:45:51,102 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:45:51,104 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:45:51,142 - face_recognizer - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:45:51,142 - streamlit_app - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:45:55,289 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:45:55,410 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:45:55,410 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:45:55,410 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:45:55,410 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:45:55,410 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:45:55,426 - face_recognizer - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:45:55,426 - streamlit_app - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl

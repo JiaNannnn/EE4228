@@ -1,0 +1,97 @@
+2025-03-17 23:51:29,750 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:51:29,820 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:51:29,820 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:51:29,820 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:51:29,820 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:51:29,827 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:51:29,843 - face_recognizer - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:51:29,843 - streamlit_app - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:51:57,564 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:51:57,820 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:51:57,820 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:51:57,820 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:51:57,820 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:51:57,820 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:51:57,858 - face_recognizer - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:51:57,858 - streamlit_app - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:51:59,602 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:51:59,694 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:51:59,694 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:51:59,694 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:51:59,694 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:51:59,694 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:51:59,717 - face_recognizer - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:51:59,717 - streamlit_app - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:52:07,479 - streamlit_app - INFO - Loaded 400 images from AT&T dataset
+2025-03-17 23:52:08,245 - streamlit_app - INFO - Loaded 70 pre-processed images from 7 users
+2025-03-17 23:52:10,791 - face_recognizer - INFO - Model trained with 470 faces, 47 classes
+2025-03-17 23:52:10,791 - face_recognizer - INFO - PCA components: 176
+2025-03-17 23:52:10,791 - face_recognizer - INFO - Training accuracy: 0.9043
+2025-03-17 23:52:10,823 - face_recognizer - INFO - Model saved to D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:52:55,391 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:52:55,441 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:52:55,441 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:52:55,441 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:52:55,441 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:52:55,441 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:52:55,475 - face_recognizer - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:52:55,475 - streamlit_app - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:52:56,987 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:52:57,039 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 23:52:57,039 - face_preprocessor - INFO - Face preprocessor initialized with target size: 128
+2025-03-17 23:52:57,039 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 23:52:57,039 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 23:52:57,039 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 23:52:57,054 - face_recognizer - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:52:57,054 - streamlit_app - INFO - Model loaded from D:\Tools\4228\Facial Recognition\models\face_recognition_model.pkl
+2025-03-17 23:53:01,674 - face_recognizer - INFO - Confidence 0.22 below threshold 0.60
+2025-03-17 23:53:01,858 - face_recognizer - INFO - Confidence 0.19 below threshold 0.60
+2025-03-17 23:53:02,101 - face_recognizer - INFO - Confidence 0.19 below threshold 0.60
+2025-03-17 23:53:02,279 - face_recognizer - INFO - Confidence 0.18 below threshold 0.60
+2025-03-17 23:53:02,459 - face_recognizer - INFO - Confidence 0.15 below threshold 0.60
+2025-03-17 23:53:02,694 - face_recognizer - INFO - Confidence 0.11 below threshold 0.60
+2025-03-17 23:53:02,934 - face_recognizer - INFO - Confidence 0.10 below threshold 0.60
+2025-03-17 23:53:03,107 - face_recognizer - INFO - Confidence 0.08 below threshold 0.60
+2025-03-17 23:53:03,278 - face_recognizer - INFO - Confidence 0.10 below threshold 0.60
+2025-03-17 23:53:03,440 - face_recognizer - INFO - Confidence 0.12 below threshold 0.60
+2025-03-17 23:53:03,645 - face_recognizer - INFO - Confidence 0.02 below threshold 0.60
+2025-03-17 23:53:03,869 - face_recognizer - INFO - Confidence 0.13 below threshold 0.60
+2025-03-17 23:53:04,127 - face_recognizer - INFO - Confidence 0.14 below threshold 0.60
+2025-03-17 23:53:04,338 - face_recognizer - INFO - Confidence 0.16 below threshold 0.60
+2025-03-17 23:53:04,586 - face_recognizer - INFO - Confidence 0.16 below threshold 0.60
+2025-03-17 23:53:04,813 - face_recognizer - INFO - Confidence 0.17 below threshold 0.60
+2025-03-17 23:53:04,987 - face_recognizer - INFO - Confidence 0.16 below threshold 0.60
+2025-03-17 23:53:05,224 - face_recognizer - INFO - Confidence 0.17 below threshold 0.60
+2025-03-17 23:53:05,459 - face_recognizer - INFO - Confidence 0.11 below threshold 0.60
+2025-03-17 23:53:05,628 - face_recognizer - INFO - Confidence 0.11 below threshold 0.60
+2025-03-17 23:53:05,855 - face_recognizer - INFO - Confidence 0.05 below threshold 0.60
+2025-03-17 23:53:06,131 - face_recognizer - INFO - Confidence 0.09 below threshold 0.60
+2025-03-17 23:53:06,345 - face_recognizer - INFO - Confidence 0.07 below threshold 0.60
+2025-03-17 23:53:06,578 - face_recognizer - INFO - Confidence 0.05 below threshold 0.60
+2025-03-17 23:53:06,769 - face_recognizer - INFO - Confidence 0.12 below threshold 0.60
+2025-03-17 23:53:06,993 - face_recognizer - INFO - Confidence 0.12 below threshold 0.60
+2025-03-17 23:53:07,210 - face_recognizer - INFO - Confidence 0.09 below threshold 0.60
+2025-03-17 23:53:07,381 - face_recognizer - INFO - Confidence 0.16 below threshold 0.60
+2025-03-17 23:53:07,636 - face_recognizer - INFO - Confidence 0.11 below threshold 0.60
+2025-03-17 23:53:07,889 - face_recognizer - INFO - Confidence 0.08 below threshold 0.60
+2025-03-17 23:53:08,170 - face_recognizer - INFO - Confidence 0.12 below threshold 0.60
+2025-03-17 23:53:08,370 - face_recognizer - INFO - Confidence 0.11 below threshold 0.60
+2025-03-17 23:53:08,544 - face_recognizer - INFO - Confidence 0.08 below threshold 0.60
+2025-03-17 23:53:08,755 - face_recognizer - INFO - Confidence 0.12 below threshold 0.60
+2025-03-17 23:53:08,981 - face_recognizer - INFO - Confidence 0.08 below threshold 0.60
+2025-03-17 23:53:09,161 - face_recognizer - INFO - Confidence 0.14 below threshold 0.60
+2025-03-17 23:53:09,378 - face_recognizer - INFO - Confidence 0.21 below threshold 0.60
+2025-03-17 23:53:09,615 - face_recognizer - INFO - Confidence 0.21 below threshold 0.60
+2025-03-17 23:53:09,800 - face_recognizer - INFO - Confidence 0.15 below threshold 0.60
+2025-03-17 23:53:09,977 - face_recognizer - INFO - Confidence 0.13 below threshold 0.60
+2025-03-17 23:53:10,225 - face_recognizer - INFO - Confidence 0.15 below threshold 0.60
+2025-03-17 23:53:10,449 - face_recognizer - INFO - Confidence 0.17 below threshold 0.60
+2025-03-17 23:53:10,625 - face_recognizer - INFO - Confidence 0.13 below threshold 0.60
+2025-03-17 23:53:10,858 - face_recognizer - INFO - Confidence 0.12 below threshold 0.60
+2025-03-17 23:53:11,153 - face_recognizer - INFO - Confidence 0.11 below threshold 0.60
+2025-03-17 23:53:11,320 - face_recognizer - INFO - Confidence 0.09 below threshold 0.60
+2025-03-17 23:53:11,574 - face_recognizer - INFO - Confidence 0.08 below threshold 0.60
+2025-03-17 23:53:11,741 - face_recognizer - INFO - Confidence 0.09 below threshold 0.60
+2025-03-17 23:53:11,999 - face_recognizer - INFO - Confidence 0.08 below threshold 0.60
+2025-03-17 23:53:12,222 - face_recognizer - INFO - Confidence 0.09 below threshold 0.60
+2025-03-17 23:53:12,466 - face_recognizer - INFO - Confidence 0.12 below threshold 0.60

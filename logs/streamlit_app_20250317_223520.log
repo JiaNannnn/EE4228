@@ -1,0 +1,166 @@
+2025-03-17 22:35:20,597 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:20,674 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:20,674 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:35:20,674 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:35:20,674 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:35:20,685 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:35:28,586 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:28,647 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:28,647 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:35:28,647 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:35:28,647 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:35:28,647 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:35:31,236 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:31,292 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:31,292 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:35:31,292 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:35:31,292 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:35:31,292 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:35:35,262 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:35,315 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:35,315 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:35:35,315 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:35:35,315 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:35:35,315 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:35:43,644 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:43,727 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:43,727 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:35:43,727 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:35:43,727 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:35:43,727 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:35:44,662 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:44,710 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:35:44,710 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:35:44,710 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:35:44,710 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:35:44,710 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:36:49,945 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:49,992 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:49,992 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:36:49,992 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:36:49,992 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:36:49,992 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:36:51,211 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:51,315 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:51,315 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:36:51,316 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:36:51,316 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:36:51,316 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:36:52,318 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:52,423 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:52,423 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:36:52,423 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:36:52,423 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:36:52,423 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:36:54,355 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:54,604 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:54,604 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:36:54,604 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:36:54,604 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:36:54,604 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:36:55,073 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:55,224 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:55,224 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:36:55,224 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:36:55,224 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:36:55,224 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:36:56,054 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:56,205 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:36:56,207 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:36:56,207 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:36:56,207 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:36:56,207 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:47:36,801 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:36,856 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:36,856 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:47:36,856 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:47:36,856 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:47:36,856 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:47:46,340 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:46,428 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:46,428 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:47:46,428 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:47:46,428 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:47:46,428 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:47:55,871 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:55,953 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:55,953 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:47:55,953 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:47:55,953 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:47:55,953 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:47:56,561 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:56,684 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:56,684 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:47:56,684 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:47:56,684 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:47:56,684 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:47:58,607 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:58,720 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:47:58,720 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:47:58,720 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:47:58,720 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:47:58,722 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:47:59,505 - streamlit_app - ERROR - Error training model: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:48:14,129 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:48:14,211 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:48:14,211 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:48:14,211 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:48:14,211 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:48:14,211 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:48:14,287 - streamlit_app - ERROR - Error training model: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:54:15,549 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:15,607 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:15,607 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:54:15,607 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:54:15,607 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:54:15,607 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:54:17,883 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:17,934 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:17,934 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:54:17,934 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:54:17,934 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:54:17,934 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:54:18,500 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:18,548 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:18,548 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:54:18,548 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:54:18,548 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:54:18,548 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:54:20,538 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:20,592 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:20,592 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:54:20,592 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:54:20,592 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:54:20,592 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:54:22,275 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:22,378 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:54:22,378 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:54:22,378 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:54:22,378 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:54:22,378 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:54:22,979 - streamlit_app - ERROR - Error training model: Can't parse 'center'. Sequence item with index 0 has a wrong type
+2025-03-17 22:56:12,805 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:12,850 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:12,850 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:56:12,850 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:56:12,850 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:56:12,850 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:56:14,648 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:14,694 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:14,694 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:56:14,694 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:56:14,694 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:56:14,694 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:56:15,201 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:15,257 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:15,257 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:56:15,257 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:56:15,257 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:56:15,257 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:56:16,645 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:16,762 - face_detector - INFO - Face detector initialized with cascade: C:\Users\nan.jia\AppData\Roaming\Python\Python312\site-packages\cv2\data\haarcascade_frontalface_default.xml
+2025-03-17 22:56:16,762 - face_preprocessor - INFO - Face preprocessor initialized with target size: (100, 100)
+2025-03-17 22:56:16,762 - face_preprocessor - INFO - Contrast enhancements: CLAHE, Histogram Equalization
+2025-03-17 22:56:16,762 - face_preprocessor - INFO - Face alignment enabled with eye positions: L=(0.35, 0.4), R=(0.65, 0.4)
+2025-03-17 22:56:16,762 - face_recognizer - INFO - Face recognizer initialized with PCA variance: 0.95
+2025-03-17 22:56:16,828 - streamlit_app - ERROR - Error training model: Can't parse 'center'. Sequence item with index 0 has a wrong type

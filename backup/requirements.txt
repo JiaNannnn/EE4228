@@ -1,0 +1,36 @@
+# Core dependencies
+numpy>=1.19.0
+opencv-contrib-python>=4.5.0
+matplotlib>=3.3.0
+scikit-learn>=0.24.0
+dlib>=19.21.0
+joblib>=1.0.0
+tqdm>=4.50.0
+Pillow>=8.0.0
+
+# System monitoring
+psutil>=5.8.0
+
+# Multithreading support
+pytest-timeout>=1.4.2
+
+# Performance monitoring
+memory-profiler>=0.58.0
+py-spy>=0.3.8
+
+# ML tracking and experimentation
+mlflow>=1.15.0
+
+# Web interface
+streamlit>=1.0.0
+fastapi>=0.68.0
+uvicorn>=0.15.0
+python-multipart>=0.0.5
+aiofiles>=0.7.0
+
+# Optional dependencies
+mediapipe>=0.8.9  # Alternative face detection
+onnxruntime>=1.8.0  # Model optimization
+pytest>=6.2.5  # Testing
+albumentations>=1.0.0  # Data augmentation
+flask>=2.0.1  # Web interface alternative 

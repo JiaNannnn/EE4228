@@ -1,0 +1,27 @@
+2025-03-15 17:34:23,145 - INFO - Starting Face Recognition System dependency installation
+2025-03-15 17:34:23,145 - INFO - Detected operating system: Windows 11
+2025-03-15 17:34:23,145 - INFO - Python version 3.12.6 is compatible
+2025-03-15 17:34:23,575 - INFO - Virtual environment already exists at venv
+2025-03-15 17:34:23,778 - INFO - 9/13 required packages already installed
+2025-03-15 17:34:23,778 - INFO - 4/4 development packages already installed
+2025-03-15 17:34:23,779 - ERROR - Error checking build prerequisites: [WinError 2] The system cannot find the file specified
+2025-03-15 17:34:23,779 - WARNING - dlib prerequisites not met
+2025-03-15 17:34:23,779 - INFO - Instructions for manual dlib installation:
+2025-03-15 17:34:23,779 - INFO - 1. Ensure you have Visual Studio with C++ toolchain installed
+2025-03-15 17:34:23,779 - INFO - 2. Ensure you have CMake installed
+2025-03-15 17:34:23,779 - INFO - 3. Run: pip install dlib
+2025-03-15 17:34:23,779 - INFO -    If that fails, try: pip install https://github.com/jloh02/dlib/releases/download/v19.22/dlib-19.22.99-cp310-cp310-win_amd64.whl
+2025-03-15 17:34:23,779 - INFO -    (Replace cp310 with your Python version, e.g., cp39 for Python 3.9)
+2025-03-15 17:34:23,779 - INFO - Continuing installation without dlib
+2025-03-15 17:34:23,779 - INFO - Installing 3 required packages: opencv-contrib-python>=4.5.0, psutil>=5.8.0, pywin32>=300
+2025-03-15 17:34:37,679 - INFO - Packages installed successfully
+2025-03-15 17:34:37,679 - INFO - Downloading required models
+2025-03-15 17:35:10,403 - ERROR - Error downloading models: Command '['C:\\Users\\nan.jia\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', 'download_models.py']' returned non-zero exit status 1.
+2025-03-15 17:35:10,403 - WARNING - Failed to download models
+2025-03-15 17:35:10,403 - WARNING - You will need to download the models manually before using the system
+2025-03-15 17:35:10,418 - INFO - Installation completed successfully
+2025-03-15 17:35:10,418 - INFO - 
+Next steps:
+2025-03-15 17:35:10,419 - INFO - 1. Activate the virtual environment: venv\Scripts\activate.bat
+2025-03-15 17:35:10,419 - INFO - 2. Run the face recognition system: python realtime_face_recognition.py
+2025-03-15 17:35:10,419 - INFO -    - or - Run the web interface: python web_interface.py

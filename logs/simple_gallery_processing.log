@@ -1,0 +1,506 @@
+2025-03-17 23:49:03,668 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.51 (1).jpeg, shape: (2047, 1535, 3)
+2025-03-17 23:49:04,025 - simple_gallery_processor - INFO - Face detected at (143,458,1237,1237) with margin: (0,211,1535,1731)
+2025-03-17 23:49:04,025 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_1.jpg
+2025-03-17 23:49:04,067 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.51 (2).jpeg, shape: (2048, 1535, 3)
+2025-03-17 23:49:04,356 - simple_gallery_processor - INFO - Face detected at (130,416,1237,1237) with margin: (0,169,1535,1731)
+2025-03-17 23:49:04,356 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_2.jpg
+2025-03-17 23:49:04,394 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.51.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:04,690 - simple_gallery_processor - INFO - Face detected at (142,444,1231,1231) with margin: (0,198,1536,1723)
+2025-03-17 23:49:04,690 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_3.jpg
+2025-03-17 23:49:04,724 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.52 (1).jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:04,994 - simple_gallery_processor - INFO - Face detected at (136,410,1254,1254) with margin: (0,160,1536,1754)
+2025-03-17 23:49:04,995 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_4.jpg
+2025-03-17 23:49:05,039 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.52 (2).jpeg, shape: (2047, 1536, 3)
+2025-03-17 23:49:05,386 - simple_gallery_processor - INFO - Face detected at (46,400,1133,1133) with margin: (0,174,1536,1585)
+2025-03-17 23:49:05,489 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_5.jpg
+2025-03-17 23:49:05,556 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.52.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:05,869 - simple_gallery_processor - INFO - Face detected at (163,436,1225,1225) with margin: (0,191,1536,1715)
+2025-03-17 23:49:05,869 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_6.jpg
+2025-03-17 23:49:05,907 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:06,209 - simple_gallery_processor - INFO - Multiple faces (2) detected in WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg, using largest
+2025-03-17 23:49:06,209 - simple_gallery_processor - INFO - Face detected at (148,467,1219,1219) with margin: (0,224,1536,1705)
+2025-03-17 23:49:06,213 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_7.jpg
+2025-03-17 23:49:06,267 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.53 (2).jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:06,635 - simple_gallery_processor - INFO - Face detected at (263,528,1174,1174) with margin: (29,294,1507,1642)
+2025-03-17 23:49:06,635 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_8.jpg
+2025-03-17 23:49:06,677 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.53.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:06,989 - simple_gallery_processor - INFO - Multiple faces (2) detected in WhatsApp Image 2025-03-17 at 10.24.53.jpeg, using largest
+2025-03-17 23:49:06,989 - simple_gallery_processor - INFO - Face detected at (218,410,1280,1280) with margin: (0,154,1536,1792)
+2025-03-17 23:49:06,995 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_9.jpg
+2025-03-17 23:49:07,039 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.54.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:07,318 - simple_gallery_processor - INFO - Face detected at (107,481,1213,1213) with margin: (0,239,1536,1697)
+2025-03-17 23:49:07,320 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_10.jpg
+2025-03-17 23:49:07,322 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0001.jpg, shape: (841, 602, 3)
+2025-03-17 23:49:07,365 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for IMG-20250312-WA0001.jpg
+2025-03-17 23:49:07,461 - simple_gallery_processor - INFO - Still no faces found, trying very lenient parameters for IMG-20250312-WA0001.jpg
+2025-03-17 23:49:07,595 - simple_gallery_processor - INFO - Multiple faces (2) detected in IMG-20250312-WA0001.jpg, using largest
+2025-03-17 23:49:07,595 - simple_gallery_processor - INFO - Face detected at (233,195,248,248) with margin: (184,146,346,346)
+2025-03-17 23:49:07,597 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_1.jpg
+2025-03-17 23:49:07,603 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0002.jpg, shape: (1040, 650, 3)
+2025-03-17 23:49:07,654 - simple_gallery_processor - INFO - Face detected at (63,286,557,557) with margin: (0,175,650,779)
+2025-03-17 23:49:07,662 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_2.jpg
+2025-03-17 23:49:07,665 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0003.jpg, shape: (922, 590, 3)
+2025-03-17 23:49:07,731 - simple_gallery_processor - INFO - Face detected at (54,314,487,487) with margin: (0,217,590,681)
+2025-03-17 23:49:07,735 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_3.jpg
+2025-03-17 23:49:07,743 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0004.jpg, shape: (869, 680, 3)
+2025-03-17 23:49:07,809 - simple_gallery_processor - INFO - Face detected at (157,601,200,200) with margin: (117,561,280,280)
+2025-03-17 23:49:07,809 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_4.jpg
+2025-03-17 23:49:07,817 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0005.jpg, shape: (767, 506, 3)
+2025-03-17 23:49:07,872 - simple_gallery_processor - INFO - Face detected at (61,229,417,417) with margin: (0,146,506,583)
+2025-03-17 23:49:07,872 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_5.jpg
+2025-03-17 23:49:07,881 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0006.jpg, shape: (930, 631, 3)
+2025-03-17 23:49:07,940 - simple_gallery_processor - INFO - Face detected at (60,272,532,532) with margin: (0,166,631,744)
+2025-03-17 23:49:07,964 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_6.jpg
+2025-03-17 23:49:07,967 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0007.jpg, shape: (582, 453, 3)
+2025-03-17 23:49:07,985 - simple_gallery_processor - INFO - Multiple faces (2) detected in IMG-20250312-WA0007.jpg, using largest
+2025-03-17 23:49:07,985 - simple_gallery_processor - INFO - Face detected at (26,94,382,382) with margin: (0,18,453,534)
+2025-03-17 23:49:07,996 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_7.jpg
+2025-03-17 23:49:07,999 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0008.jpg, shape: (847, 616, 3)
+2025-03-17 23:49:08,058 - simple_gallery_processor - INFO - Face detected at (44,228,529,529) with margin: (0,123,616,724)
+2025-03-17 23:49:08,058 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_8.jpg
+2025-03-17 23:49:08,065 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0009.jpg, shape: (785, 552, 3)
+2025-03-17 23:49:08,130 - simple_gallery_processor - INFO - Face detected at (64,214,445,445) with margin: (0,125,552,623)
+2025-03-17 23:49:08,131 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_9.jpg
+2025-03-17 23:49:08,238 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_22_Pro.jpg, shape: (451, 325, 3)
+2025-03-17 23:49:08,272 - simple_gallery_processor - INFO - Face detected at (25,108,285,285) with margin: (0,51,325,399)
+2025-03-17 23:49:08,272 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_1.jpg
+2025-03-17 23:49:08,272 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_23_Pro (2).jpg, shape: (434, 310, 3)
+2025-03-17 23:49:08,304 - simple_gallery_processor - INFO - Face detected at (5,98,257,257) with margin: (0,47,310,359)
+2025-03-17 23:49:08,304 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_2.jpg
+2025-03-17 23:49:08,313 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_23_Pro.jpg, shape: (424, 317, 3)
+2025-03-17 23:49:08,338 - simple_gallery_processor - INFO - Face detected at (21,93,282,282) with margin: (0,37,317,387)
+2025-03-17 23:49:08,339 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_3.jpg
+2025-03-17 23:49:08,342 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_25_Pro.jpg, shape: (460, 333, 3)
+2025-03-17 23:49:08,367 - simple_gallery_processor - INFO - Face detected at (79,118,251,251) with margin: (29,68,304,351)
+2025-03-17 23:49:08,368 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_4.jpg
+2025-03-17 23:49:08,371 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_26_Pro.jpg, shape: (444, 313, 3)
+2025-03-17 23:49:08,394 - simple_gallery_processor - INFO - Face detected at (12,100,261,261) with margin: (0,48,313,365)
+2025-03-17 23:49:08,394 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_5.jpg
+2025-03-17 23:49:08,396 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_27_Pro.jpg, shape: (390, 316, 3)
+2025-03-17 23:49:08,417 - simple_gallery_processor - INFO - Face detected at (4,97,243,243) with margin: (0,49,316,339)
+2025-03-17 23:49:08,417 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_6.jpg
+2025-03-17 23:49:08,421 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_31_Pro.jpg, shape: (442, 356, 3)
+2025-03-17 23:49:08,451 - simple_gallery_processor - INFO - Face detected at (24,80,300,300) with margin: (0,20,356,420)
+2025-03-17 23:49:08,483 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_7.jpg
+2025-03-17 23:49:08,491 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_32_Pro.jpg, shape: (487, 366, 3)
+2025-03-17 23:49:08,516 - simple_gallery_processor - INFO - Face detected at (5,110,300,300) with margin: (0,50,366,420)
+2025-03-17 23:49:08,521 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_8.jpg
+2025-03-17 23:49:08,523 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_33_Pro.jpg, shape: (490, 332, 3)
+2025-03-17 23:49:08,551 - simple_gallery_processor - INFO - Face detected at (26,103,298,298) with margin: (0,44,332,416)
+2025-03-17 23:49:08,551 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_9.jpg
+2025-03-17 23:49:08,560 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_34_Pro.jpg, shape: (487, 375, 3)
+2025-03-17 23:49:08,590 - simple_gallery_processor - INFO - Face detected at (61,99,307,307) with margin: (0,38,375,429)
+2025-03-17 23:49:08,591 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_10.jpg
+2025-03-17 23:49:08,643 - simple_gallery_processor - INFO - Processing image: mmexport1742012606334.jpg, shape: (2152, 1591, 3)
+2025-03-17 23:49:09,060 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012606334.jpg
+2025-03-17 23:49:10,002 - simple_gallery_processor - INFO - Multiple faces (8) detected in mmexport1742012606334.jpg, using largest
+2025-03-17 23:49:10,002 - simple_gallery_processor - INFO - Face detected at (983,565,99,99) with margin: (964,546,137,137)
+2025-03-17 23:49:10,010 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_1.jpg
+2025-03-17 23:49:10,053 - simple_gallery_processor - INFO - Processing image: mmexport1742012607908.jpg, shape: (2152, 1829, 3)
+2025-03-17 23:49:10,479 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012607908.jpg
+2025-03-17 23:49:11,847 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012607908.jpg, using largest
+2025-03-17 23:49:11,847 - simple_gallery_processor - INFO - Face detected at (352,1678,43,43) with margin: (344,1670,59,59)
+2025-03-17 23:49:11,847 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_2.jpg
+2025-03-17 23:49:11,908 - simple_gallery_processor - INFO - Processing image: mmexport1742012609523.jpg, shape: (2186, 1863, 3)
+2025-03-17 23:49:12,465 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012609523.jpg
+2025-03-17 23:49:13,905 - simple_gallery_processor - INFO - Multiple faces (7) detected in mmexport1742012609523.jpg, using largest
+2025-03-17 23:49:13,905 - simple_gallery_processor - INFO - Face detected at (1252,195,85,85) with margin: (1235,178,119,119)
+2025-03-17 23:49:13,907 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_3.jpg
+2025-03-17 23:49:13,978 - simple_gallery_processor - INFO - Processing image: mmexport1742012611048.jpg, shape: (2374, 1718, 3)
+2025-03-17 23:49:14,546 - simple_gallery_processor - INFO - Face detected at (908,1246,124,124) with margin: (884,1222,172,172)
+2025-03-17 23:49:14,547 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_4.jpg
+2025-03-17 23:49:14,628 - simple_gallery_processor - INFO - Processing image: mmexport1742012612553.jpg, shape: (2697, 1957, 3)
+2025-03-17 23:49:15,579 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1742012612553.jpg, using largest
+2025-03-17 23:49:15,579 - simple_gallery_processor - INFO - Face detected at (1446,2113,430,430) with margin: (1360,2027,597,602)
+2025-03-17 23:49:15,582 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_5.jpg
+2025-03-17 23:49:15,637 - simple_gallery_processor - INFO - Processing image: mmexport1742012614161.jpg, shape: (2450, 1752, 3)
+2025-03-17 23:49:16,157 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012614161.jpg
+2025-03-17 23:49:17,694 - simple_gallery_processor - INFO - Multiple faces (15) detected in mmexport1742012614161.jpg, using largest
+2025-03-17 23:49:17,694 - simple_gallery_processor - INFO - Face detected at (52,620,1654,1654) with margin: (0,290,1752,2160)
+2025-03-17 23:49:17,694 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_6.jpg
+2025-03-17 23:49:17,768 - simple_gallery_processor - INFO - Processing image: mmexport1742012615616.jpg, shape: (2391, 1804, 3)
+2025-03-17 23:49:18,371 - simple_gallery_processor - INFO - Face detected at (80,561,1639,1639) with margin: (0,234,1804,2157)
+2025-03-17 23:49:18,376 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_7.jpg
+2025-03-17 23:49:18,432 - simple_gallery_processor - INFO - Processing image: mmexport1742012617230.jpg, shape: (2561, 1880, 3)
+2025-03-17 23:49:18,827 - simple_gallery_processor - INFO - Face detected at (962,926,109,109) with margin: (941,905,151,151)
+2025-03-17 23:49:18,827 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_8.jpg
+2025-03-17 23:49:18,887 - simple_gallery_processor - INFO - Processing image: mmexport1742012618789.jpg, shape: (2152, 1625, 3)
+2025-03-17 23:49:19,291 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012618789.jpg
+2025-03-17 23:49:20,263 - simple_gallery_processor - INFO - Multiple faces (7) detected in mmexport1742012618789.jpg, using largest
+2025-03-17 23:49:20,263 - simple_gallery_processor - INFO - Face detected at (1430,1843,56,56) with margin: (1419,1832,78,78)
+2025-03-17 23:49:20,263 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_9.jpg
+2025-03-17 23:49:20,342 - simple_gallery_processor - INFO - Processing image: mmexport1742012620535.jpg, shape: (2723, 1948, 3)
+2025-03-17 23:49:21,087 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1742012620535.jpg, using largest
+2025-03-17 23:49:21,088 - simple_gallery_processor - INFO - Face detected at (148,1076,98,98) with margin: (129,1057,136,136)
+2025-03-17 23:49:21,090 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_10.jpg
+2025-03-17 23:49:21,107 - simple_gallery_processor - INFO - Processing image: mmexport1741834559399.jpg, shape: (1115, 873, 3)
+2025-03-17 23:49:21,250 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834559399.jpg
+2025-03-17 23:49:21,664 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1741834559399.jpg, using largest
+2025-03-17 23:49:21,664 - simple_gallery_processor - INFO - Face detected at (490,552,348,348) with margin: (421,483,452,486)
+2025-03-17 23:49:21,690 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_1.jpg
+2025-03-17 23:49:21,706 - simple_gallery_processor - INFO - Processing image: mmexport1741834561641.jpg, shape: (1106, 891, 3)
+2025-03-17 23:49:21,893 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834561641.jpg
+2025-03-17 23:49:22,274 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834561641.jpg, using largest
+2025-03-17 23:49:22,274 - simple_gallery_processor - INFO - Face detected at (52,53,61,61) with margin: (40,41,85,85)
+2025-03-17 23:49:22,274 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_2.jpg
+2025-03-17 23:49:22,299 - simple_gallery_processor - INFO - Processing image: mmexport1741834563331.jpg, shape: (1330, 1008, 3)
+2025-03-17 23:49:22,538 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834563331.jpg
+2025-03-17 23:49:23,105 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834563331.jpg, using largest
+2025-03-17 23:49:23,105 - simple_gallery_processor - INFO - Face detected at (557,416,75,75) with margin: (542,401,105,105)
+2025-03-17 23:49:23,107 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_3.jpg
+2025-03-17 23:49:23,128 - simple_gallery_processor - INFO - Processing image: mmexport1741834565080.jpg, shape: (1443, 1065, 3)
+2025-03-17 23:49:23,427 - simple_gallery_processor - INFO - Face detected at (104,381,55,55) with margin: (93,370,77,77)
+2025-03-17 23:49:23,434 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_4.jpg
+2025-03-17 23:49:23,449 - simple_gallery_processor - INFO - Processing image: mmexport1741834566919.jpg, shape: (1238, 929, 3)
+2025-03-17 23:49:23,601 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834566919.jpg
+2025-03-17 23:49:24,029 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834566919.jpg, using largest
+2025-03-17 23:49:24,029 - simple_gallery_processor - INFO - Face detected at (250,105,52,52) with margin: (240,95,72,72)
+2025-03-17 23:49:24,029 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_5.jpg
+2025-03-17 23:49:24,043 - simple_gallery_processor - INFO - Processing image: mmexport1741834568683.jpg, shape: (1267, 912, 3)
+2025-03-17 23:49:24,208 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834568683.jpg, using largest
+2025-03-17 23:49:24,208 - simple_gallery_processor - INFO - Face detected at (3,69,164,164) with margin: (0,37,228,228)
+2025-03-17 23:49:24,208 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_6.jpg
+2025-03-17 23:49:24,229 - simple_gallery_processor - INFO - Processing image: mmexport1741834570585.jpg, shape: (1361, 954, 3)
+2025-03-17 23:49:24,410 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834570585.jpg
+2025-03-17 23:49:24,872 - simple_gallery_processor - INFO - Face detected at (27,34,28,28) with margin: (22,29,38,38)
+2025-03-17 23:49:24,876 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_7.jpg
+2025-03-17 23:49:24,893 - simple_gallery_processor - INFO - Processing image: mmexport1741834572501.jpg, shape: (1008, 813, 3)
+2025-03-17 23:49:25,031 - simple_gallery_processor - INFO - Face detected at (226,330,307,307) with margin: (165,269,429,429)
+2025-03-17 23:49:25,035 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_8.jpg
+2025-03-17 23:49:25,060 - simple_gallery_processor - INFO - Processing image: mmexport1741834574290.jpg, shape: (1235, 1021, 3)
+2025-03-17 23:49:25,277 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834574290.jpg
+2025-03-17 23:49:25,752 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834574290.jpg, using largest
+2025-03-17 23:49:25,752 - simple_gallery_processor - INFO - Face detected at (163,226,57,57) with margin: (152,215,79,79)
+2025-03-17 23:49:25,754 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_9.jpg
+2025-03-17 23:49:25,773 - simple_gallery_processor - INFO - Processing image: mmexport1741834575894.jpg, shape: (1361, 936, 3)
+2025-03-17 23:49:25,870 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.51 (1).jpeg, shape: (2047, 1535, 3)
+2025-03-17 23:49:26,023 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834575894.jpg
+2025-03-17 23:49:26,870 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834575894.jpg, using largest
+2025-03-17 23:49:26,870 - simple_gallery_processor - INFO - Face detected at (848,29,55,55) with margin: (837,18,77,77)
+2025-03-17 23:49:26,870 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_10.jpg
+2025-03-17 23:49:26,893 - simple_gallery_processor - INFO - Face detected at (143,458,1237,1237) with margin: (0,211,1535,1731)
+2025-03-17 23:49:26,893 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_1.jpg
+2025-03-17 23:49:26,933 - simple_gallery_processor - INFO - Processing image: mmexport1742012580162.jpg, shape: (1933, 1437, 3)
+2025-03-17 23:49:26,980 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.51 (2).jpeg, shape: (2048, 1535, 3)
+2025-03-17 23:49:27,643 - simple_gallery_processor - INFO - Face detected at (91,417,1280,1280) with margin: (0,161,1437,1772)
+2025-03-17 23:49:27,643 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_1.jpg
+2025-03-17 23:49:27,728 - simple_gallery_processor - INFO - Processing image: mmexport1742012581707.jpg, shape: (1670, 1573, 3)
+2025-03-17 23:49:27,817 - simple_gallery_processor - INFO - Face detected at (130,416,1237,1237) with margin: (0,169,1535,1731)
+2025-03-17 23:49:27,817 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_2.jpg
+2025-03-17 23:49:27,986 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.51.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:28,307 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1742012581707.jpg, using largest
+2025-03-17 23:49:28,307 - simple_gallery_processor - INFO - Face detected at (1446,473,110,110) with margin: (1424,451,149,154)
+2025-03-17 23:49:28,315 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_2.jpg
+2025-03-17 23:49:28,467 - simple_gallery_processor - INFO - Processing image: mmexport1742012583249.jpg, shape: (2115, 1511, 3)
+2025-03-17 23:49:28,681 - simple_gallery_processor - INFO - Face detected at (142,444,1231,1231) with margin: (0,198,1536,1723)
+2025-03-17 23:49:28,686 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_3.jpg
+2025-03-17 23:49:28,947 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.52 (1).jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:29,285 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012583249.jpg, using largest
+2025-03-17 23:49:29,285 - simple_gallery_processor - INFO - Face detected at (1097,2005,61,61) with margin: (1085,1993,85,85)
+2025-03-17 23:49:29,285 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_3.jpg
+2025-03-17 23:49:29,430 - simple_gallery_processor - INFO - Processing image: mmexport1742012584718.jpg, shape: (1773, 1516, 3)
+2025-03-17 23:49:29,595 - simple_gallery_processor - INFO - Face detected at (136,410,1254,1254) with margin: (0,160,1536,1754)
+2025-03-17 23:49:29,595 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_4.jpg
+2025-03-17 23:49:29,704 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.52 (2).jpeg, shape: (2047, 1536, 3)
+2025-03-17 23:49:30,446 - simple_gallery_processor - INFO - Face detected at (1233,1206,53,53) with margin: (1223,1196,73,73)
+2025-03-17 23:49:30,451 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_4.jpg
+2025-03-17 23:49:30,520 - simple_gallery_processor - INFO - Face detected at (46,400,1133,1133) with margin: (0,174,1536,1585)
+2025-03-17 23:49:30,520 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_5.jpg
+2025-03-17 23:49:30,537 - simple_gallery_processor - INFO - Processing image: mmexport1742012586191.jpg, shape: (2104, 1573, 3)
+2025-03-17 23:49:30,678 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.52.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:31,442 - simple_gallery_processor - INFO - Face detected at (163,436,1225,1225) with margin: (0,191,1536,1715)
+2025-03-17 23:49:31,475 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_6.jpg
+2025-03-17 23:49:31,488 - simple_gallery_processor - INFO - Face detected at (1389,249,145,145) with margin: (1360,220,203,203)
+2025-03-17 23:49:31,491 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_5.jpg
+2025-03-17 23:49:31,528 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:31,542 - simple_gallery_processor - INFO - Processing image: mmexport1742012587719.jpg, shape: (1864, 1573, 3)
+2025-03-17 23:49:32,238 - simple_gallery_processor - INFO - Multiple faces (2) detected in WhatsApp Image 2025-03-17 at 10.24.53 (1).jpeg, using largest
+2025-03-17 23:49:32,238 - simple_gallery_processor - INFO - Face detected at (148,467,1219,1219) with margin: (0,224,1536,1705)
+2025-03-17 23:49:32,239 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_7.jpg
+2025-03-17 23:49:32,311 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.53 (2).jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:32,344 - simple_gallery_processor - INFO - Face detected at (1244,1413,99,99) with margin: (1225,1394,137,137)
+2025-03-17 23:49:32,344 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_6.jpg
+2025-03-17 23:49:32,441 - simple_gallery_processor - INFO - Processing image: mmexport1742012589143.jpg, shape: (2087, 1499, 3)
+2025-03-17 23:49:33,051 - simple_gallery_processor - INFO - Face detected at (263,528,1174,1174) with margin: (29,294,1507,1642)
+2025-03-17 23:49:33,087 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_8.jpg
+2025-03-17 23:49:33,176 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.53.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:33,392 - simple_gallery_processor - INFO - Face detected at (1130,1869,61,61) with margin: (1118,1857,85,85)
+2025-03-17 23:49:33,401 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_7.jpg
+2025-03-17 23:49:33,519 - simple_gallery_processor - INFO - Processing image: mmexport1742012590683.jpg, shape: (1898, 1351, 3)
+2025-03-17 23:49:33,738 - simple_gallery_processor - INFO - Multiple faces (2) detected in WhatsApp Image 2025-03-17 at 10.24.53.jpeg, using largest
+2025-03-17 23:49:33,738 - simple_gallery_processor - INFO - Face detected at (218,410,1280,1280) with margin: (0,154,1536,1792)
+2025-03-17 23:49:33,738 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_9.jpg
+2025-03-17 23:49:33,906 - simple_gallery_processor - INFO - Processing image: WhatsApp Image 2025-03-17 at 10.24.54.jpeg, shape: (2048, 1536, 3)
+2025-03-17 23:49:34,107 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012590683.jpg, using largest
+2025-03-17 23:49:34,107 - simple_gallery_processor - INFO - Face detected at (58,348,1269,1269) with margin: (0,95,1351,1775)
+2025-03-17 23:49:34,115 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_8.jpg
+2025-03-17 23:49:34,295 - simple_gallery_processor - INFO - Processing image: mmexport1742012592127.jpg, shape: (2075, 1419, 3)
+2025-03-17 23:49:34,533 - simple_gallery_processor - INFO - Face detected at (107,481,1213,1213) with margin: (0,239,1536,1697)
+2025-03-17 23:49:34,533 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Eden\face_10.jpg
+2025-03-17 23:49:34,748 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0001.jpg, shape: (841, 602, 3)
+2025-03-17 23:49:34,861 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for IMG-20250312-WA0001.jpg
+2025-03-17 23:49:34,958 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012592127.jpg, using largest
+2025-03-17 23:49:34,958 - simple_gallery_processor - INFO - Face detected at (1164,1880,61,61) with margin: (1152,1868,85,85)
+2025-03-17 23:49:34,958 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_9.jpg
+2025-03-17 23:49:35,005 - simple_gallery_processor - INFO - Still no faces found, trying very lenient parameters for IMG-20250312-WA0001.jpg
+2025-03-17 23:49:35,043 - simple_gallery_processor - INFO - Processing image: mmexport1742012593638.jpg, shape: (1767, 1539, 3)
+2025-03-17 23:49:35,301 - simple_gallery_processor - INFO - Multiple faces (2) detected in IMG-20250312-WA0001.jpg, using largest
+2025-03-17 23:49:35,301 - simple_gallery_processor - INFO - Face detected at (233,195,248,248) with margin: (184,146,346,346)
+2025-03-17 23:49:35,310 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_1.jpg
+2025-03-17 23:49:35,318 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0002.jpg, shape: (1040, 650, 3)
+2025-03-17 23:49:35,487 - simple_gallery_processor - INFO - Face detected at (63,286,557,557) with margin: (0,175,650,779)
+2025-03-17 23:49:35,487 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_2.jpg
+2025-03-17 23:49:35,515 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0003.jpg, shape: (922, 590, 3)
+2025-03-17 23:49:35,654 - simple_gallery_processor - INFO - Face detected at (54,314,487,487) with margin: (0,217,590,681)
+2025-03-17 23:49:35,655 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_3.jpg
+2025-03-17 23:49:35,670 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0004.jpg, shape: (869, 680, 3)
+2025-03-17 23:49:35,783 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012593638.jpg
+2025-03-17 23:49:35,798 - simple_gallery_processor - INFO - Face detected at (157,601,200,200) with margin: (117,561,280,280)
+2025-03-17 23:49:35,800 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_4.jpg
+2025-03-17 23:49:35,807 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0005.jpg, shape: (767, 506, 3)
+2025-03-17 23:49:35,895 - simple_gallery_processor - INFO - Face detected at (61,229,417,417) with margin: (0,146,506,583)
+2025-03-17 23:49:35,899 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_5.jpg
+2025-03-17 23:49:35,911 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0006.jpg, shape: (930, 631, 3)
+2025-03-17 23:49:36,066 - simple_gallery_processor - INFO - Face detected at (60,272,532,532) with margin: (0,166,631,744)
+2025-03-17 23:49:36,066 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_6.jpg
+2025-03-17 23:49:36,082 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0007.jpg, shape: (582, 453, 3)
+2025-03-17 23:49:36,185 - simple_gallery_processor - INFO - Multiple faces (2) detected in IMG-20250312-WA0007.jpg, using largest
+2025-03-17 23:49:36,185 - simple_gallery_processor - INFO - Face detected at (26,94,382,382) with margin: (0,18,453,534)
+2025-03-17 23:49:36,185 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_7.jpg
+2025-03-17 23:49:36,260 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0008.jpg, shape: (847, 616, 3)
+2025-03-17 23:49:36,456 - simple_gallery_processor - INFO - Face detected at (44,228,529,529) with margin: (0,123,616,724)
+2025-03-17 23:49:36,458 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_8.jpg
+2025-03-17 23:49:36,475 - simple_gallery_processor - INFO - Processing image: IMG-20250312-WA0009.jpg, shape: (785, 552, 3)
+2025-03-17 23:49:36,650 - simple_gallery_processor - INFO - Face detected at (64,214,445,445) with margin: (0,125,552,623)
+2025-03-17 23:49:36,650 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Hein(Thomas)\face_9.jpg
+2025-03-17 23:49:36,681 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_22_Pro.jpg, shape: (451, 325, 3)
+2025-03-17 23:49:36,754 - simple_gallery_processor - INFO - Face detected at (25,108,285,285) with margin: (0,51,325,399)
+2025-03-17 23:49:36,754 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_1.jpg
+2025-03-17 23:49:36,764 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_23_Pro (2).jpg, shape: (434, 310, 3)
+2025-03-17 23:49:36,870 - simple_gallery_processor - INFO - Face detected at (5,98,257,257) with margin: (0,47,310,359)
+2025-03-17 23:49:36,878 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_2.jpg
+2025-03-17 23:49:36,919 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_23_Pro.jpg, shape: (424, 317, 3)
+2025-03-17 23:49:36,968 - simple_gallery_processor - INFO - Face detected at (21,93,282,282) with margin: (0,37,317,387)
+2025-03-17 23:49:37,005 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_3.jpg
+2025-03-17 23:49:37,014 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_25_Pro.jpg, shape: (460, 333, 3)
+2025-03-17 23:49:37,050 - simple_gallery_processor - INFO - Face detected at (79,118,251,251) with margin: (29,68,304,351)
+2025-03-17 23:49:37,050 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_4.jpg
+2025-03-17 23:49:37,050 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_26_Pro.jpg, shape: (444, 313, 3)
+2025-03-17 23:49:37,099 - simple_gallery_processor - INFO - Face detected at (12,100,261,261) with margin: (0,48,313,365)
+2025-03-17 23:49:37,099 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_5.jpg
+2025-03-17 23:49:37,103 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_27_Pro.jpg, shape: (390, 316, 3)
+2025-03-17 23:49:37,136 - simple_gallery_processor - INFO - Face detected at (4,97,243,243) with margin: (0,49,316,339)
+2025-03-17 23:49:37,136 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_6.jpg
+2025-03-17 23:49:37,144 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_31_Pro.jpg, shape: (442, 356, 3)
+2025-03-17 23:49:37,200 - simple_gallery_processor - INFO - Face detected at (24,80,300,300) with margin: (0,20,356,420)
+2025-03-17 23:49:37,201 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_7.jpg
+2025-03-17 23:49:37,201 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_32_Pro.jpg, shape: (487, 366, 3)
+2025-03-17 23:49:37,253 - simple_gallery_processor - INFO - Face detected at (5,110,300,300) with margin: (0,50,366,420)
+2025-03-17 23:49:37,261 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_8.jpg
+2025-03-17 23:49:37,265 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_33_Pro.jpg, shape: (490, 332, 3)
+2025-03-17 23:49:37,306 - simple_gallery_processor - INFO - Face detected at (26,103,298,298) with margin: (0,44,332,416)
+2025-03-17 23:49:37,306 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_9.jpg
+2025-03-17 23:49:37,314 - simple_gallery_processor - INFO - Processing image: WIN_20250315_13_16_34_Pro.jpg, shape: (487, 375, 3)
+2025-03-17 23:49:37,355 - simple_gallery_processor - INFO - Face detected at (61,99,307,307) with margin: (0,38,375,429)
+2025-03-17 23:49:37,357 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\JiaNan\face_10.jpg
+2025-03-17 23:49:37,435 - simple_gallery_processor - INFO - Processing image: mmexport1742012606334.jpg, shape: (2152, 1591, 3)
+2025-03-17 23:49:37,464 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012593638.jpg, using largest
+2025-03-17 23:49:37,465 - simple_gallery_processor - INFO - Face detected at (190,181,1215,1215) with margin: (0,0,1539,1701)
+2025-03-17 23:49:37,467 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_10.jpg
+2025-03-17 23:49:37,581 - simple_gallery_processor - INFO - Processing image: mmexport1741834586128.jpg, shape: (2306, 1506, 3)
+2025-03-17 23:49:38,381 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012606334.jpg
+2025-03-17 23:49:38,414 - simple_gallery_processor - INFO - Face detected at (1297,1079,52,52) with margin: (1287,1069,72,72)
+2025-03-17 23:49:38,415 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_1.jpg
+2025-03-17 23:49:38,515 - simple_gallery_processor - INFO - Processing image: mmexport1741834591112.jpg, shape: (2323, 1804, 3)
+2025-03-17 23:49:39,835 - simple_gallery_processor - INFO - Face detected at (1384,2090,53,53) with margin: (1374,2080,73,73)
+2025-03-17 23:49:39,835 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_2.jpg
+2025-03-17 23:49:40,145 - simple_gallery_processor - INFO - Processing image: mmexport1741834596085.jpg, shape: (2331, 1812, 3)
+2025-03-17 23:49:40,646 - simple_gallery_processor - INFO - Multiple faces (8) detected in mmexport1742012606334.jpg, using largest
+2025-03-17 23:49:40,646 - simple_gallery_processor - INFO - Face detected at (983,565,99,99) with margin: (964,546,137,137)
+2025-03-17 23:49:40,646 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_1.jpg
+2025-03-17 23:49:41,067 - simple_gallery_processor - INFO - Processing image: mmexport1742012607908.jpg, shape: (2152, 1829, 3)
+2025-03-17 23:49:41,870 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834596085.jpg
+2025-03-17 23:49:41,926 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012607908.jpg
+2025-03-17 23:49:44,850 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012607908.jpg, using largest
+2025-03-17 23:49:44,850 - simple_gallery_processor - INFO - Face detected at (352,1678,43,43) with margin: (344,1670,59,59)
+2025-03-17 23:49:44,850 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_2.jpg
+2025-03-17 23:49:44,895 - simple_gallery_processor - INFO - Multiple faces (9) detected in mmexport1741834596085.jpg, using largest
+2025-03-17 23:49:44,895 - simple_gallery_processor - INFO - Face detected at (988,1039,408,408) with margin: (907,958,570,570)
+2025-03-17 23:49:44,901 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_3.jpg
+2025-03-17 23:49:44,940 - simple_gallery_processor - INFO - Processing image: mmexport1742012609523.jpg, shape: (2186, 1863, 3)
+2025-03-17 23:49:44,970 - simple_gallery_processor - INFO - Processing image: mmexport1741834600411.jpg, shape: (2297, 1557, 3)
+2025-03-17 23:49:45,893 - simple_gallery_processor - INFO - Face detected at (1324,2095,53,53) with margin: (1314,2085,73,73)
+2025-03-17 23:49:45,893 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_4.jpg
+2025-03-17 23:49:45,978 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012609523.jpg
+2025-03-17 23:49:45,987 - simple_gallery_processor - INFO - Processing image: mmexport1741834606632.jpg, shape: (2416, 1787, 3)
+2025-03-17 23:49:46,582 - simple_gallery_processor - INFO - Face detected at (1309,1207,299,299) with margin: (1250,1148,417,417)
+2025-03-17 23:49:46,582 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_5.jpg
+2025-03-17 23:49:46,793 - simple_gallery_processor - INFO - Processing image: mmexport1741834618806.jpg, shape: (2731, 1795, 3)
+2025-03-17 23:49:48,720 - simple_gallery_processor - INFO - Face detected at (1380,666,52,52) with margin: (1370,656,72,72)
+2025-03-17 23:49:48,722 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_6.jpg
+2025-03-17 23:49:48,765 - simple_gallery_processor - INFO - Multiple faces (7) detected in mmexport1742012609523.jpg, using largest
+2025-03-17 23:49:48,765 - simple_gallery_processor - INFO - Face detected at (1252,195,85,85) with margin: (1235,178,119,119)
+2025-03-17 23:49:48,765 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_3.jpg
+2025-03-17 23:49:48,811 - simple_gallery_processor - INFO - Processing image: mmexport1741834620866.jpg, shape: (2340, 1812, 3)
+2025-03-17 23:49:48,883 - simple_gallery_processor - INFO - Processing image: mmexport1742012611048.jpg, shape: (2374, 1718, 3)
+2025-03-17 23:49:49,982 - simple_gallery_processor - INFO - Face detected at (908,1246,124,124) with margin: (884,1222,172,172)
+2025-03-17 23:49:49,982 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_4.jpg
+2025-03-17 23:49:49,991 - simple_gallery_processor - INFO - Face detected at (932,1033,415,415) with margin: (849,950,581,581)
+2025-03-17 23:49:50,091 - simple_gallery_processor - INFO - Processing image: mmexport1742012612553.jpg, shape: (2697, 1957, 3)
+2025-03-17 23:49:50,099 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_7.jpg
+2025-03-17 23:49:50,246 - simple_gallery_processor - INFO - Processing image: mmexport1741834625179.jpg, shape: (2450, 1710, 3)
+2025-03-17 23:49:51,501 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834625179.jpg
+2025-03-17 23:49:51,534 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1742012612553.jpg, using largest
+2025-03-17 23:49:51,534 - simple_gallery_processor - INFO - Face detected at (1446,2113,430,430) with margin: (1360,2027,597,602)
+2025-03-17 23:49:51,534 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_5.jpg
+2025-03-17 23:49:51,666 - simple_gallery_processor - INFO - Processing image: mmexport1742012614161.jpg, shape: (2450, 1752, 3)
+2025-03-17 23:49:53,355 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012614161.jpg
+2025-03-17 23:49:54,079 - simple_gallery_processor - INFO - Multiple faces (4) detected in mmexport1741834625179.jpg, using largest
+2025-03-17 23:49:54,081 - simple_gallery_processor - INFO - Face detected at (41,864,968,968) with margin: (0,671,1354,1354)
+2025-03-17 23:49:54,081 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_8.jpg
+2025-03-17 23:49:54,206 - simple_gallery_processor - INFO - Processing image: mmexport1741834626948.jpg, shape: (2467, 1625, 3)
+2025-03-17 23:49:55,495 - simple_gallery_processor - INFO - Face detected at (126,966,54,54) with margin: (116,956,74,74)
+2025-03-17 23:49:55,504 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_9.jpg
+2025-03-17 23:49:55,627 - simple_gallery_processor - INFO - Processing image: mmexport1741834629297.jpg, shape: (2450, 1735, 3)
+2025-03-17 23:49:56,414 - simple_gallery_processor - INFO - Multiple faces (15) detected in mmexport1742012614161.jpg, using largest
+2025-03-17 23:49:56,414 - simple_gallery_processor - INFO - Face detected at (52,620,1654,1654) with margin: (0,290,1752,2160)
+2025-03-17 23:49:56,414 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_6.jpg
+2025-03-17 23:49:56,454 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834629297.jpg, using largest
+2025-03-17 23:49:56,454 - simple_gallery_processor - INFO - Face detected at (551,1232,203,203) with margin: (511,1192,283,283)
+2025-03-17 23:49:56,460 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_10.jpg
+2025-03-17 23:49:56,515 - simple_gallery_processor - INFO - Processing image: mmexport1742012615616.jpg, shape: (2391, 1804, 3)
+2025-03-17 23:49:56,556 - simple_gallery_processor - INFO - Processing image: mmexport1741834630812.jpg, shape: (2382, 1744, 3)
+2025-03-17 23:49:57,487 - simple_gallery_processor - INFO - Face detected at (1242,1165,301,301) with margin: (1182,1105,421,421)
+2025-03-17 23:49:57,487 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_11.jpg
+2025-03-17 23:49:57,656 - simple_gallery_processor - INFO - Face detected at (80,561,1639,1639) with margin: (0,234,1804,2157)
+2025-03-17 23:49:57,662 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_7.jpg
+2025-03-17 23:49:57,740 - simple_gallery_processor - INFO - Processing image: mmexport1742012617230.jpg, shape: (2561, 1880, 3)
+2025-03-17 23:49:58,207 - simple_gallery_processor - INFO - Face detected at (962,926,109,109) with margin: (941,905,151,151)
+2025-03-17 23:49:58,215 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_8.jpg
+2025-03-17 23:49:58,275 - simple_gallery_processor - INFO - Processing image: mmexport1742012618789.jpg, shape: (2152, 1625, 3)
+2025-03-17 23:49:58,820 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012618789.jpg
+2025-03-17 23:50:00,109 - simple_gallery_processor - INFO - Multiple faces (7) detected in mmexport1742012618789.jpg, using largest
+2025-03-17 23:50:00,109 - simple_gallery_processor - INFO - Face detected at (1430,1843,56,56) with margin: (1419,1832,78,78)
+2025-03-17 23:50:00,109 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_9.jpg
+2025-03-17 23:50:00,202 - simple_gallery_processor - INFO - Processing image: mmexport1742012620535.jpg, shape: (2723, 1948, 3)
+2025-03-17 23:50:01,120 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1742012620535.jpg, using largest
+2025-03-17 23:50:01,120 - simple_gallery_processor - INFO - Face detected at (148,1076,98,98) with margin: (129,1057,136,136)
+2025-03-17 23:50:01,120 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Pengwei\face_10.jpg
+2025-03-17 23:50:01,143 - simple_gallery_processor - INFO - Processing image: mmexport1741834559399.jpg, shape: (1115, 873, 3)
+2025-03-17 23:50:01,276 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834559399.jpg
+2025-03-17 23:50:01,635 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1741834559399.jpg, using largest
+2025-03-17 23:50:01,635 - simple_gallery_processor - INFO - Face detected at (490,552,348,348) with margin: (421,483,452,486)
+2025-03-17 23:50:01,640 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_1.jpg
+2025-03-17 23:50:01,654 - simple_gallery_processor - INFO - Processing image: mmexport1741834561641.jpg, shape: (1106, 891, 3)
+2025-03-17 23:50:01,775 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834561641.jpg
+2025-03-17 23:50:02,134 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834561641.jpg, using largest
+2025-03-17 23:50:02,134 - simple_gallery_processor - INFO - Face detected at (52,53,61,61) with margin: (40,41,85,85)
+2025-03-17 23:50:02,140 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_2.jpg
+2025-03-17 23:50:02,159 - simple_gallery_processor - INFO - Processing image: mmexport1741834563331.jpg, shape: (1330, 1008, 3)
+2025-03-17 23:50:02,351 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834563331.jpg
+2025-03-17 23:50:02,807 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834563331.jpg, using largest
+2025-03-17 23:50:02,807 - simple_gallery_processor - INFO - Face detected at (557,416,75,75) with margin: (542,401,105,105)
+2025-03-17 23:50:02,807 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_3.jpg
+2025-03-17 23:50:02,835 - simple_gallery_processor - INFO - Processing image: mmexport1741834565080.jpg, shape: (1443, 1065, 3)
+2025-03-17 23:50:03,090 - simple_gallery_processor - INFO - Face detected at (104,381,55,55) with margin: (93,370,77,77)
+2025-03-17 23:50:03,098 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_4.jpg
+2025-03-17 23:50:03,108 - simple_gallery_processor - INFO - Processing image: mmexport1741834566919.jpg, shape: (1238, 929, 3)
+2025-03-17 23:50:03,257 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834566919.jpg
+2025-03-17 23:50:03,660 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834566919.jpg, using largest
+2025-03-17 23:50:03,660 - simple_gallery_processor - INFO - Face detected at (250,105,52,52) with margin: (240,95,72,72)
+2025-03-17 23:50:03,666 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_5.jpg
+2025-03-17 23:50:03,682 - simple_gallery_processor - INFO - Processing image: mmexport1741834568683.jpg, shape: (1267, 912, 3)
+2025-03-17 23:50:03,852 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834568683.jpg, using largest
+2025-03-17 23:50:03,852 - simple_gallery_processor - INFO - Face detected at (3,69,164,164) with margin: (0,37,228,228)
+2025-03-17 23:50:03,852 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_6.jpg
+2025-03-17 23:50:03,867 - simple_gallery_processor - INFO - Processing image: mmexport1741834570585.jpg, shape: (1361, 954, 3)
+2025-03-17 23:50:04,023 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834570585.jpg
+2025-03-17 23:50:04,470 - simple_gallery_processor - INFO - Face detected at (27,34,28,28) with margin: (22,29,38,38)
+2025-03-17 23:50:04,470 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_7.jpg
+2025-03-17 23:50:04,483 - simple_gallery_processor - INFO - Processing image: mmexport1741834572501.jpg, shape: (1008, 813, 3)
+2025-03-17 23:50:04,591 - simple_gallery_processor - INFO - Face detected at (226,330,307,307) with margin: (165,269,429,429)
+2025-03-17 23:50:04,591 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_8.jpg
+2025-03-17 23:50:04,608 - simple_gallery_processor - INFO - Processing image: mmexport1741834574290.jpg, shape: (1235, 1021, 3)
+2025-03-17 23:50:04,766 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834574290.jpg
+2025-03-17 23:50:05,152 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834574290.jpg, using largest
+2025-03-17 23:50:05,152 - simple_gallery_processor - INFO - Face detected at (163,226,57,57) with margin: (152,215,79,79)
+2025-03-17 23:50:05,153 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_9.jpg
+2025-03-17 23:50:05,169 - simple_gallery_processor - INFO - Processing image: mmexport1741834575894.jpg, shape: (1361, 936, 3)
+2025-03-17 23:50:05,339 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834575894.jpg
+2025-03-17 23:50:05,766 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834575894.jpg, using largest
+2025-03-17 23:50:05,766 - simple_gallery_processor - INFO - Face detected at (848,29,55,55) with margin: (837,18,77,77)
+2025-03-17 23:50:05,772 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\XianJie\face_10.jpg
+2025-03-17 23:50:05,819 - simple_gallery_processor - INFO - Processing image: mmexport1742012580162.jpg, shape: (1933, 1437, 3)
+2025-03-17 23:50:06,280 - simple_gallery_processor - INFO - Face detected at (91,417,1280,1280) with margin: (0,161,1437,1772)
+2025-03-17 23:50:06,282 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_1.jpg
+2025-03-17 23:50:06,325 - simple_gallery_processor - INFO - Processing image: mmexport1742012581707.jpg, shape: (1670, 1573, 3)
+2025-03-17 23:50:06,806 - simple_gallery_processor - INFO - Multiple faces (3) detected in mmexport1742012581707.jpg, using largest
+2025-03-17 23:50:06,806 - simple_gallery_processor - INFO - Face detected at (1446,473,110,110) with margin: (1424,451,149,154)
+2025-03-17 23:50:06,806 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_2.jpg
+2025-03-17 23:50:06,859 - simple_gallery_processor - INFO - Processing image: mmexport1742012583249.jpg, shape: (2115, 1511, 3)
+2025-03-17 23:50:07,371 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012583249.jpg, using largest
+2025-03-17 23:50:07,371 - simple_gallery_processor - INFO - Face detected at (1097,2005,61,61) with margin: (1085,1993,85,85)
+2025-03-17 23:50:07,371 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_3.jpg
+2025-03-17 23:50:07,424 - simple_gallery_processor - INFO - Processing image: mmexport1742012584718.jpg, shape: (1773, 1516, 3)
+2025-03-17 23:50:07,922 - simple_gallery_processor - INFO - Face detected at (1233,1206,53,53) with margin: (1223,1196,73,73)
+2025-03-17 23:50:07,924 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_4.jpg
+2025-03-17 23:50:07,981 - simple_gallery_processor - INFO - Processing image: mmexport1742012586191.jpg, shape: (2104, 1573, 3)
+2025-03-17 23:50:08,497 - simple_gallery_processor - INFO - Face detected at (1389,249,145,145) with margin: (1360,220,203,203)
+2025-03-17 23:50:08,499 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_5.jpg
+2025-03-17 23:50:08,548 - simple_gallery_processor - INFO - Processing image: mmexport1742012587719.jpg, shape: (1864, 1573, 3)
+2025-03-17 23:50:09,024 - simple_gallery_processor - INFO - Face detected at (1244,1413,99,99) with margin: (1225,1394,137,137)
+2025-03-17 23:50:09,031 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_6.jpg
+2025-03-17 23:50:09,081 - simple_gallery_processor - INFO - Processing image: mmexport1742012589143.jpg, shape: (2087, 1499, 3)
+2025-03-17 23:50:09,572 - simple_gallery_processor - INFO - Face detected at (1130,1869,61,61) with margin: (1118,1857,85,85)
+2025-03-17 23:50:09,572 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_7.jpg
+2025-03-17 23:50:09,620 - simple_gallery_processor - INFO - Processing image: mmexport1742012590683.jpg, shape: (1898, 1351, 3)
+2025-03-17 23:50:10,030 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012590683.jpg, using largest
+2025-03-17 23:50:10,030 - simple_gallery_processor - INFO - Face detected at (58,348,1269,1269) with margin: (0,95,1351,1775)
+2025-03-17 23:50:10,033 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_8.jpg
+2025-03-17 23:50:10,079 - simple_gallery_processor - INFO - Processing image: mmexport1742012592127.jpg, shape: (2075, 1419, 3)
+2025-03-17 23:50:10,751 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012592127.jpg, using largest
+2025-03-17 23:50:10,751 - simple_gallery_processor - INFO - Face detected at (1164,1880,61,61) with margin: (1152,1868,85,85)
+2025-03-17 23:50:10,753 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_9.jpg
+2025-03-17 23:50:10,798 - simple_gallery_processor - INFO - Processing image: mmexport1742012593638.jpg, shape: (1767, 1539, 3)
+2025-03-17 23:50:11,246 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1742012593638.jpg
+2025-03-17 23:50:12,364 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1742012593638.jpg, using largest
+2025-03-17 23:50:12,364 - simple_gallery_processor - INFO - Face detected at (190,181,1215,1215) with margin: (0,0,1539,1701)
+2025-03-17 23:50:12,364 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\Xuyang\face_10.jpg
+2025-03-17 23:50:12,419 - simple_gallery_processor - INFO - Processing image: mmexport1741834586128.jpg, shape: (2306, 1506, 3)
+2025-03-17 23:50:12,872 - simple_gallery_processor - INFO - Face detected at (1297,1079,52,52) with margin: (1287,1069,72,72)
+2025-03-17 23:50:12,872 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_1.jpg
+2025-03-17 23:50:12,945 - simple_gallery_processor - INFO - Processing image: mmexport1741834591112.jpg, shape: (2323, 1804, 3)
+2025-03-17 23:50:13,576 - simple_gallery_processor - INFO - Face detected at (1384,2090,53,53) with margin: (1374,2080,73,73)
+2025-03-17 23:50:13,577 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_2.jpg
+2025-03-17 23:50:13,649 - simple_gallery_processor - INFO - Processing image: mmexport1741834596085.jpg, shape: (2331, 1812, 3)
+2025-03-17 23:50:14,323 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834596085.jpg
+2025-03-17 23:50:16,066 - simple_gallery_processor - INFO - Multiple faces (9) detected in mmexport1741834596085.jpg, using largest
+2025-03-17 23:50:16,070 - simple_gallery_processor - INFO - Face detected at (988,1039,408,408) with margin: (907,958,570,570)
+2025-03-17 23:50:16,070 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_3.jpg
+2025-03-17 23:50:16,118 - simple_gallery_processor - INFO - Processing image: mmexport1741834600411.jpg, shape: (2297, 1557, 3)
+2025-03-17 23:50:16,550 - simple_gallery_processor - INFO - Face detected at (1324,2095,53,53) with margin: (1314,2085,73,73)
+2025-03-17 23:50:16,551 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_4.jpg
+2025-03-17 23:50:16,611 - simple_gallery_processor - INFO - Processing image: mmexport1741834606632.jpg, shape: (2416, 1787, 3)
+2025-03-17 23:50:17,161 - simple_gallery_processor - INFO - Face detected at (1309,1207,299,299) with margin: (1250,1148,417,417)
+2025-03-17 23:50:17,162 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_5.jpg
+2025-03-17 23:50:17,275 - simple_gallery_processor - INFO - Processing image: mmexport1741834618806.jpg, shape: (2731, 1795, 3)
+2025-03-17 23:50:18,043 - simple_gallery_processor - INFO - Face detected at (1380,666,52,52) with margin: (1370,656,72,72)
+2025-03-17 23:50:18,045 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_6.jpg
+2025-03-17 23:50:18,111 - simple_gallery_processor - INFO - Processing image: mmexport1741834620866.jpg, shape: (2340, 1812, 3)
+2025-03-17 23:50:18,731 - simple_gallery_processor - INFO - Face detected at (932,1033,415,415) with margin: (849,950,581,581)
+2025-03-17 23:50:18,731 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_7.jpg
+2025-03-17 23:50:18,792 - simple_gallery_processor - INFO - Processing image: mmexport1741834625179.jpg, shape: (2450, 1710, 3)
+2025-03-17 23:50:19,337 - simple_gallery_processor - INFO - No faces found with default parameters, trying lenient parameters for mmexport1741834625179.jpg
+2025-03-17 23:50:20,647 - simple_gallery_processor - INFO - Multiple faces (4) detected in mmexport1741834625179.jpg, using largest
+2025-03-17 23:50:20,647 - simple_gallery_processor - INFO - Face detected at (41,864,968,968) with margin: (0,671,1354,1354)
+2025-03-17 23:50:20,647 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_8.jpg
+2025-03-17 23:50:20,699 - simple_gallery_processor - INFO - Processing image: mmexport1741834626948.jpg, shape: (2467, 1625, 3)
+2025-03-17 23:50:21,305 - simple_gallery_processor - INFO - Face detected at (126,966,54,54) with margin: (116,956,74,74)
+2025-03-17 23:50:21,306 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_9.jpg
+2025-03-17 23:50:21,376 - simple_gallery_processor - INFO - Processing image: mmexport1741834629297.jpg, shape: (2450, 1735, 3)
+2025-03-17 23:50:21,940 - simple_gallery_processor - INFO - Multiple faces (2) detected in mmexport1741834629297.jpg, using largest
+2025-03-17 23:50:21,940 - simple_gallery_processor - INFO - Face detected at (551,1232,203,203) with margin: (511,1192,283,283)
+2025-03-17 23:50:21,942 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_10.jpg
+2025-03-17 23:50:22,014 - simple_gallery_processor - INFO - Processing image: mmexport1741834630812.jpg, shape: (2382, 1744, 3)
+2025-03-17 23:50:22,491 - simple_gallery_processor - INFO - Face detected at (1242,1165,301,301) with margin: (1182,1105,421,421)
+2025-03-17 23:50:22,491 - simple_gallery_processor - INFO - Successfully saved processed face to data\users\ZheKai\face_11.jpg

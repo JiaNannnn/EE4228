@@ -1,0 +1,59 @@
+/* Custom styles for Face Recognition System */
+
+.stream-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 480px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+#stream {
+    max-height: 480px;
+    width: auto;
+}
+
+#detection-results {
+    min-height: 100px;
+}
+
+.face-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    background-color: #f8f9fa;
+}
+
+.face-item .confidence {
+    float: right;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.confidence-high {
+    background-color: #28a745;
+    color: white;
+}
+
+.confidence-medium {
+    background-color: #ffc107;
+    color: black;
+}
+
+.confidence-low {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-subject {
+    color: #dc3545;
+    cursor: pointer;
+    float: right;
+}
+
+.delete-subject:hover {
+    color: #c82333;
+} 

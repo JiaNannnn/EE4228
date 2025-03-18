@@ -1,0 +1,144 @@
+import cv2
+import os
+import time
+import pandas as pd
+import streamlit as st
+from log import logger
+
+def recognize_face_realtime():
+    """
+    Perform real-time face recognition using the webcam
+    """
+    global model_loaded
+    
+    if not model_loaded and not os.path.exists(MODEL_PATH):
+        st.error("No trained model available. Please train the model first.")
+        return
+    
+    # Load the model if not already loaded
+    if not model_loaded:
+        try:
+            model_loaded = recognizer.load(MODEL_PATH)
+            if not model_loaded:
+                st.error(f"Failed to load model from {MODEL_PATH}")
+                return
+        except Exception as e:
+            st.error(f"Error loading model: {e}")
+            logger.error(f"Error loading model: {e}")
+            return
+    
+    # Create a placeholder for the webcam feed
+    video_placeholder = st.empty()
+    result_placeholder = st.empty()
+    
+    # Explicitly define resize dimensions
+    resize_width, resize_height = 100, 100
+    
+    # Start webcam
+    try:
+        cap = cv2.VideoCapture(0)
+        if not cap.isOpened():
+            st.error("Could not open webcam. Please check your camera connection.")
+            return
+            
+        # Add a stop button
+        stop_button = st.button("Stop Recognition")
+        
+        while not stop_button:
+            # Read frame
+            ret, frame = cap.read()
+            if not ret:
+                st.error("Failed to get frame from camera")
+                break
+                
+            # Flip frame horizontally for a mirror effect
+            frame = cv2.flip(frame, 1)
+            
+            # Convert to grayscale for face detection
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            
+            # Detect faces
+            faces = detector.detect_faces(gray)
+            
+            # Process each face
+            results = []
+            for face_rect in faces:
+                # Extract face ROI
+                x, y, w, h = face_rect
+                face_roi = gray[y:y+h, x:x+w]
+                
+                # Preprocess face
+                try:
+                    # Resize to standard size with explicit dimensions
+                    face_resized = cv2.resize(face_roi, (resize_width, resize_height))
+                    
+                    # Apply histogram equalization
+                    face_processed = cv2.equalizeHist(face_resized)
+                    
+                    # Predict identity
+                    label, confidence = recognizer.predict(face_processed)
+                    
+                    # Determine color based on confidence (green=high, yellow=medium, red=low)
+                    if label == "Unknown":
+                        color = (0, 0, 255)  # Red for unknown
+                    else:
+                        if confidence > 0.7:
+                            color = (0, 255, 0)  # Green
+                        elif confidence > 0.5:
+                            color = (0, 255, 255)  # Yellow
+                        else:
+                            color = (0, 128, 255)  # Orange
+                    
+                    # Display label text (strip 'ATT_' prefix for AT&T subjects)
+                    display_label = label
+                    if label.startswith("ATT_"):
+                        display_label = label[4:]  # Remove "ATT_" prefix
+                    
+                    label_text = f"{display_label} ({confidence:.2f})"
+                    
+                    # Draw rectangle and label
+                    cv2.rectangle(frame, (x, y), (x+w, y+h), color, 2)
+                    
+                    # Add filled background for text
+                    label_size, _ = cv2.getTextSize(label_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 1)
+                    cv2.rectangle(frame, (x, y-25), (x+label_size[0], y), color, cv2.FILLED)
+                    cv2.putText(frame, label_text, (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 1)
+                    
+                    # Add to results
+                    if label != "Unknown":
+                        results.append({
+                            "ID": display_label,
+                            "Confidence": f"{confidence:.2f}"
+                        })
+                        
+                except Exception as e:
+                    logger.error(f"Error processing face: {e}")
+                    continue
+            
+            # Display the processed frame
+            video_placeholder.image(frame, channels="BGR", use_container_width=True)
+            
+            # Display results table
+            if results:
+                result_placeholder.dataframe(
+                    pd.DataFrame(results),
+                    use_container_width=True
+                )
+            else:
+                result_placeholder.info("No faces recognized")
+            
+            # Check if stop button was clicked
+            if stop_button:
+                break
+                
+            # Small delay to control frame rate
+            time.sleep(0.1)
+        
+        # Release webcam
+        cap.release()
+        
+    except Exception as e:
+        st.error(f"Error during real-time recognition: {e}")
+        logger.error(f"Error during real-time recognition: {e}")
+        if 'cap' in locals() and cap.isOpened():
+            cap.release() 
