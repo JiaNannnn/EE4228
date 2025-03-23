@@ -1,598 +1,353 @@
 import numpy as np
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from sklearn.ensemble import VotingClassifier, RandomForestClassifier
-from sklearn.metrics.pairwise import cosine_similarity
+import cv2
 import os
-import cv2  # For visualization if needed
+import tensorflow as tf
+from sklearn.svm import SVC, OneClassSVM
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import LabelEncoder
+from facenet_pytorch import InceptionResnetV1
+import torch
 
 class FaceRecognizer:
-    def __init__(self, n_components=0.95):
-        self.n_components = n_components
-        self.pca = PCA(n_components=self.n_components)
-        self.lda = None
-        self.scaler = StandardScaler()
-        
-        # Create multiple classifiers with better parameters
-        self.knn = KNeighborsClassifier(n_neighbors=3, weights='distance', metric='cosine')
-        self.svm = SVC(kernel='rbf', probability=True, C=10.0, gamma='scale')
-        self.rf = RandomForestClassifier(n_estimators=100, max_depth=None, min_samples_split=2)
-        
-        # Create ensemble classifier with more models
-        self.ensemble = VotingClassifier(
-            estimators=[
-                ('knn', self.knn),
-                ('svm', self.svm),
-                ('rf', self.rf)
-            ],
-            voting='soft',
-            weights=[1, 2, 1]  # Give more weight to SVM
-        )
-        
-        self.trained = False
-        self.single_user_mode = False
-        self.single_user_name = None
-        self.mean_face = None
-        self.face_threshold = None
-        self.training_faces = None
-        self.reconstruction_threshold = 0.01  # Set a reasonable default
-        self.user_names = []  # Store user names from training data
-        self.last_predictions = []  # Store last few predictions for temporal consistency
-        self.last_confidences = []  # Store last few confidences
-        self.registered_user_faces = {}  # Store faces for each registered user
-        
-        # Add minimum number of components to avoid empty feature vectors
-        self.pca.min_components = 5  # Ensure at least 5 components
-        
-    def _prepare_data(self, X):
-        """Flatten 2D images into 1D vectors"""
-        if len(X.shape) == 3:
-            n_samples, height, width = X.shape
-            return X.reshape(n_samples, height * width)
-        elif len(X.shape) == 2:
-            height, width = X.shape
-            return X.reshape(1, height * width)
-        else:
-            raise ValueError("Invalid input shape")
+    """
+    Face recognition module using FaceNet embeddings and SVM/KNN classification.
+    This implements the recognition approach described in the system architecture.
+    """
     
-    def _extract_features(self, X):
-        """Extract features using PCA and LDA if available"""
-        # Apply PCA
-        X_pca = self.pca.transform(X)
+    def __init__(self, model_path=None, method='svm', threshold=0.8):
+        """
+        Initialize face recognizer with FaceNet model.
         
-        # Apply LDA only if we have multiple classes and LDA is initialized
-        if not self.single_user_mode and self.lda is not None:
-            X_lda = self.lda.transform(X_pca)
-            return np.hstack([X_pca, X_lda])
+        Args:
+            model_path: Path to pre-trained FaceNet model (optional)
+            method: Classification method ('svm' or 'knn')
+            threshold: Confidence threshold for recognition
+        """
+        self.threshold = threshold
+        self.method = method
+        self.model_trained = False
+        self.label_encoder = LabelEncoder()
+        self.single_person_mode = False
+        self.single_person_name = None
+        self.reference_embeddings = None
         
-        return X_pca
-    
-    def _compute_reconstruction_error(self, X):
-        """Compute PCA reconstruction error"""
-        X_proj = self.pca.transform(X)
-        X_rec = self.pca.inverse_transform(X_proj)
-        return np.mean(np.square(X - X_rec), axis=1)
-    
-    def _compute_similarity_scores(self, X_pca, user_name=None):
-        """Compute multiple similarity metrics"""
-        # Ensure X_pca is properly shaped for comparison
-        X_pca_flat = X_pca.reshape(1, -1) if len(X_pca.shape) == 1 else X_pca
-        
-        if user_name and user_name in self.registered_user_faces:
-            # If we know which user to compare against, use their specific data
-            user_faces = self.registered_user_faces[user_name]
-            user_mean_face = np.mean(user_faces, axis=0)
-            
-            # Cosine similarity with user's mean face
-            cosine_score = cosine_similarity(X_pca_flat, user_mean_face.reshape(1, -1))[0][0]
-            # Ensure cosine_score is in [0,1] range by normalizing from [-1,1] to [0,1]
-            cosine_score = (cosine_score + 1) / 2.0
-            
-            # Minimum distance to user's training samples
-            min_dist = float('inf')
-            for face in user_faces:
-                face_flat = face.reshape(1, -1) if len(face.shape) == 1 else face
-                # Use cosine distance for better results with normalized data
-                similarity = cosine_similarity(X_pca_flat, face_flat)[0][0]
-                # Normalize similarity from [-1,1] to [0,1]
-                similarity = (similarity + 1) / 2.0
-                dist = 1.0 - similarity  # Convert to distance (0 = identical, 1 = completely different)
-                min_dist = min(min_dist, dist)
-            
-            # Convert inf to large value if no faces were compared
-            if min_dist == float('inf'):
-                min_dist = 1.0
-                
-            min_dist_score = 1.0 - min_dist  # Convert back to similarity (0-1)
-            
-            # For single-user mode, weight direct comparisons more heavily
-            return 0.7 * cosine_score + 0.3 * min_dist_score
-            
-        else:
-            # General comparison with all data
-            mean_face_flat = self.mean_face.reshape(1, -1) if len(self.mean_face.shape) == 1 else self.mean_face
-            
-            # Euclidean distance to mean face
-            euclidean_dist = np.linalg.norm(X_pca_flat - mean_face_flat)
-            euclidean_score = 1.0 / (1.0 + euclidean_dist)
-            
-            # Cosine similarity with mean face
-            cosine_score = cosine_similarity(X_pca_flat, mean_face_flat)[0][0]
-            # Ensure cosine_score is in [0,1] range
-            cosine_score = (cosine_score + 1) / 2.0
-            
-            # Minimum distance to training samples
-            min_dist = float('inf')
-            for face in self.training_faces:
-                face_flat = face.reshape(1, -1) if len(face.shape) == 1 else face
-                dist = np.linalg.norm(X_pca_flat - face_flat)
-                min_dist = min(min_dist, dist)
-            
-            # Convert inf to large value if no faces were compared
-            if min_dist == float('inf'):
-                min_dist = 1000.0
-                
-            min_dist_score = 1.0 / (1.0 + min_dist)
-            
-            return 0.3 * euclidean_score + 0.5 * cosine_score + 0.2 * min_dist_score
-    
-    def _is_user_name(self, name):
-        """Check if the name looks like a registered user vs. AT&T database subject"""
-        # AT&T subjects typically have names like 's1', 's2', etc.
-        if isinstance(name, str) and name.startswith('s') and name[1:].isdigit():
-            return False
-        return True
-    
-    def _analyze_training_data(self, X, y):
-        """Analyze training data to determine quality and class balance"""
-        unique_users, counts = np.unique(y, return_counts=True)
-        user_counts = dict(zip(unique_users, counts))
-        total_images = len(X)
-        
-        registered_users = [name for name in unique_users if self._is_user_name(name)]
-        att_subjects = [name for name in unique_users if not self._is_user_name(name)]
-        
-        print(f"Training data analysis:")
-        print(f"Total images: {total_images}")
-        print(f"Registered users: {len(registered_users)} ({sum(counts[np.isin(unique_users, registered_users)])/total_images*100:.1f}% of data)")
-        print(f"AT&T subjects: {len(att_subjects)} ({sum(counts[np.isin(unique_users, att_subjects)])/total_images*100:.1f}% of data)")
-        
-        # Check class imbalance
-        min_count = min(counts)
-        max_count = max(counts)
-        imbalance_ratio = max_count / min_count if min_count > 0 else float('inf')
-        print(f"Class imbalance ratio: {imbalance_ratio:.2f}")
-        
-        # If significant imbalance, print warning
-        if imbalance_ratio > 3:
-            print("Warning: Significant class imbalance detected. This may affect recognition accuracy.")
-            
-        return user_counts
-        
-    def train(self, X, y):
-        """Train the face recognition model"""
-        if len(X) == 0:
-            raise ValueError("Empty training set")
-            
-        X = np.array(X)
-        y = np.array(y)
-        
-        if len(X.shape) != 3:
-            raise ValueError(f"Expected 3D array (n_samples, height, width), got shape {X.shape}")
-            
-        unique_users = np.unique(y)
-        self.n_classes_ = len(unique_users)
-        
-        # Analyze training data
-        user_counts = self._analyze_training_data(X, y)
-        
-        # Store user names for later, filtering out AT&T subjects
-        self.user_names = [name for name in unique_users if self._is_user_name(name)]
-        print(f"Registered users found in training data: {self.user_names}")
-        
-        # Check if we have at least one registered user
-        if not self.user_names:
-            print("Warning: No registered users found in training data")
-            self.single_user_mode = False
-        else:
-            self.single_user_mode = (len(self.user_names) == 1)
-            if self.single_user_mode:
-                self.single_user_name = self.user_names[0]
-                print(f"Training in single-user mode for user: {self.single_user_name}")
-        
-        X_flat = self._prepare_data(X)
-        
-        # Check for NaN values
-        if np.isnan(X_flat).any():
-            print("Warning: NaN values detected in training data. Replacing with zeros.")
-            X_flat = np.nan_to_num(X_flat, nan=0.0)
-            
-        X_scaled = self.scaler.fit_transform(X_flat)
-        
-        # Check for NaN values after scaling
-        if np.isnan(X_scaled).any():
-            print("Warning: NaN values detected after scaling. Replacing with zeros.")
-            X_scaled = np.nan_to_num(X_scaled, nan=0.0)
-        
-        # Compute optimal PCA components - but ensure we capture enough variance
-        n_components = min(X_scaled.shape[0] - 1, X_scaled.shape[1])
-        
-        # Calculate PCA components based on variance ratio or minimum count
-        if isinstance(self.n_components, float) and 0 < self.n_components < 1:
-            # Variance ratio approach
-            pca_components = min(n_components, int(X_scaled.shape[1] * self.n_components))
-        else:
-            # Fixed number approach
-            pca_components = min(n_components, self.n_components)
-        
-        # Ensure minimum number of components is used
-        min_components = getattr(self.pca, 'min_components', 5)
-        self.pca.n_components = max(pca_components, min_components)
-        
-        # Make sure n_components is at least 1 (even for small datasets)
-        self.pca.n_components = max(self.pca.n_components, 1)
-        
-        # Check if n_components is valid
-        if self.pca.n_components >= min(X_scaled.shape):
-            # If we have more components than samples or features, reduce it
-            self.pca.n_components = max(1, min(X_scaled.shape) - 1)
-        
+        # Initialize FaceNet model
         try:
-            X_pca = self.pca.fit_transform(X_scaled)
-            
-            # Verify output has at least one feature
-            if X_pca.shape[1] == 0:
-                print("Warning: PCA produced empty feature vectors, using 5 components instead")
-                self.pca.n_components = 5
-                X_pca = self.pca.fit_transform(X_scaled)
-                
+            # Try using PyTorch implementation
+            self.facenet = InceptionResnetV1(pretrained='vggface2').eval()
+            self.backend = 'pytorch'
         except Exception as e:
-            print(f"Error in PCA: {e}. Using 5 components instead.")
-            self.pca.n_components = 5
-            X_pca = self.pca.fit_transform(X_scaled)
-        
-        # Print explained variance
-        explained_variance = sum(self.pca.explained_variance_ratio_)
-        print(f"PCA: Using {self.pca.n_components_} components, explaining {explained_variance*100:.2f}% of variance")
-        
-        # Store training faces for each registered user
-        self.registered_user_faces = {}
-        for user_name in self.user_names:
-            user_indices = np.where(y == user_name)[0]
-            if len(user_indices) > 0:
-                user_X_pca = X_pca[user_indices]
-                self.registered_user_faces[user_name] = user_X_pca
-                print(f"Stored {len(user_X_pca)} face representations for {user_name}")
-        
-        if self.single_user_mode:
-            # Filter to only use the single user's images for training
-            user_indices = np.where(y == self.single_user_name)[0]
-            user_X_pca = X_pca[user_indices]
-            
-            # Store training data for reference
-            self.training_faces = user_X_pca
-            self.mean_face = np.mean(user_X_pca, axis=0)
-            
-            # Compute reconstruction error threshold
-            user_X_scaled = X_scaled[user_indices]
-            rec_errors = self._compute_reconstruction_error(user_X_scaled)
-            
-            # Set a reasonable threshold - don't let it be too small
-            mean_error = np.mean(rec_errors)
-            std_error = np.std(rec_errors)
-            self.reconstruction_threshold = max(0.01, mean_error + 2 * std_error)
-            print(f"Reconstruction errors - Mean: {mean_error}, Std: {std_error}")
-            
-            # Compute similarity thresholds using cosine metric
-            similarities = []
-            for face in user_X_pca:
-                sim = cosine_similarity(face.reshape(1, -1), self.mean_face.reshape(1, -1))[0][0]
-                similarities.append(sim)
-            
-            sim_mean = np.mean(similarities)
-            sim_std = np.std(similarities)
-            self.face_threshold = sim_mean - 2 * sim_std  # Lower bound for similarity
-            
-            print(f"Single-user mode thresholds - Face similarity: {self.face_threshold:.4f}, Reconstruction: {self.reconstruction_threshold:.4f}")
-            self.trained = True
-        else:
-            # For multi-user mode, we need to balance the training data if using AT&T
-            
-            # Check if we have both registered users and AT&T subjects
-            registered_indices = np.array([i for i, name in enumerate(y) if self._is_user_name(name)])
-            att_indices = np.array([i for i, name in enumerate(y) if not self._is_user_name(name)])
-            
-            # Store overall training statistics
-            self.training_faces = X_pca
-            self.mean_face = np.mean(X_pca, axis=0)
-            
-            # Set a reasonable reconstruction threshold
-            rec_errors = self._compute_reconstruction_error(X_scaled)
-            mean_error = np.mean(rec_errors)
-            std_error = np.std(rec_errors)
-            self.reconstruction_threshold = max(0.01, mean_error + 2 * std_error)
-            print(f"Multi-user reconstruction threshold: {self.reconstruction_threshold:.4f}")
-            
-            if len(registered_indices) > 0 and len(att_indices) > 0:
-                print("Using data balancing for better recognition of registered users...")
-                
-                # Determine how many AT&T samples to use per registered user
-                # This balances the weight between AT&T and registered users
-                registered_user_names = np.unique(y[registered_indices])
-                samples_per_registered = min(30, len(att_indices) // len(registered_user_names))
-                
-                # Select subset of AT&T samples - reduced to 30 per registered user (was 50)
-                np.random.seed(42)  # For reproducibility
-                selected_att = np.random.choice(att_indices, 
-                                               size=min(samples_per_registered * len(registered_user_names), 
-                                                       len(att_indices)),
-                                               replace=False)
-                
-                # Combine indices with more weight given to registered users
-                balanced_indices = np.concatenate([
-                    np.repeat(registered_indices, 3),  # Repeat registered user samples 3 times
-                    selected_att
-                ])
-                print(f"Using {len(registered_indices)*3} registered user samples (repeated 3x) and {len(selected_att)} AT&T samples")
-                
-                # Use the balanced dataset
-                X_pca_balanced = X_pca[balanced_indices]
-                y_balanced = np.array([y[i] for i in balanced_indices])
-                
-                # Apply LDA for dimensionality reduction
-                n_components_lda = min(len(np.unique(y_balanced)) - 1, X_pca_balanced.shape[1])
-                self.lda = LinearDiscriminantAnalysis(n_components=n_components_lda)
-                X_lda = self.lda.fit_transform(X_pca_balanced, y_balanced)
-                X_features = np.hstack([X_pca_balanced, X_lda])
-                self.ensemble.fit(X_features, y_balanced)
-            else:
-                # Standard approach if we don't have both types
-                n_components_lda = min(self.n_classes_ - 1, X_pca.shape[1])
-                self.lda = LinearDiscriminantAnalysis(n_components=n_components_lda)
-                X_lda = self.lda.fit_transform(X_pca, y)
-                X_features = np.hstack([X_pca, X_lda])
-                self.ensemble.fit(X_features, y)
-            
-            self.trained = True
-        
-        # Reset temporal consistency lists
-        self.last_predictions = []
-        self.last_confidences = []
-        
-        return self.trained
-        
-    def predict(self, face_image):
-        """Predict the identity of a face image"""
-        # Check if we're trained
-        if not hasattr(self, 'pca') or not hasattr(self.pca, 'components_'):
-            raise RuntimeError("Model not trained yet")
-            
-        # Prepare the input image
-        if face_image is None:
-            raise ValueError("Input image is None")
-            
-        # Check dimensions
-        if len(face_image.shape) != 2:
-            raise ValueError(f"Expected grayscale image with shape (height, width), got {face_image.shape}")
-            
-        # Check for NaN values in input
-        if np.isnan(face_image).any():
-            print("Warning: NaN values in input image. Replacing with zeros.")
-            face_image = np.nan_to_num(face_image, nan=0.0)
-            
-        # Prepare data (flatten the image)
-        X_flat = self._prepare_data(face_image)
-        
-        try:
-            # Scale
-            X_scaled = self.scaler.transform(X_flat)
-            
-            # Check for NaN values after scaling
-            if np.isnan(X_scaled).any():
-                print("Warning: NaN values after scaling. Replacing with zeros.")
-                X_scaled = np.nan_to_num(X_scaled, nan=0.0)
-            
-            # Transform with PCA
+            print(f"Error loading FaceNet from PyTorch: {e}")
+            self.backend = 'tensorflow'
+            # Fallback to loading from TensorFlow model
             try:
-                X_pca = self.pca.transform(X_scaled)
-                
-                # Handle the case where PCA returns empty feature vectors
-                if X_pca.size == 0 or X_pca.shape[1] == 0:
-                    print("Error: PCA returned empty feature vectors. Using scaled data directly.")
-                    # Use a simple projection as a fallback
-                    n_features = min(5, X_scaled.shape[1])
-                    X_pca = X_scaled[:, :n_features]
-            except Exception as e:
-                print(f"PCA transform error: {e}. Using scaled data directly.")
-                # Use a simple projection as a fallback
-                n_features = min(5, X_scaled.shape[1])
-                X_pca = X_scaled[:, :n_features]
-            
-            if self.single_user_mode:
-                try:
-                    # Check reconstruction error with more reasonable threshold
-                    rec_error = self._compute_reconstruction_error(X_scaled)[0]
-                    print(f"Reconstruction error: {rec_error:.6f}, threshold: {self.reconstruction_threshold:.6f}")
-                    
-                    # Skip this check if threshold is unreasonably small
-                    if self.reconstruction_threshold > 0.001 and rec_error > self.reconstruction_threshold * 3.0:
-                        print(f"Reconstruction error too high: {rec_error} > {self.reconstruction_threshold * 3.0}")
-                        return "Unknown", 0.0
-                    
-                    # Compute similarity score directly with registered user
-                    confidence = self._compute_similarity_scores(X_pca, self.single_user_name)
-                    
-                    # Ensure confidence is in the range [0,1]
-                    confidence = max(0.0, min(1.0, confidence))
-                    
-                    # Even lower threshold for single-user mode
-                    threshold = 0.2  # Very low threshold
-                    
-                    # Add temporal consistency - if we've seen this face before
-                    if len(self.last_confidences) > 0:
-                        # Compute average recent confidence
-                        avg_confidence = sum(self.last_confidences) / len(self.last_confidences)
-                        
-                        # If current is close to average, boost confidence slightly
-                        if abs(confidence - avg_confidence) < 0.15:
-                            confidence = min(confidence * 1.2, 1.0)  # Boost by 20%, but cap at 1.0
-                    
-                    # Update history (keep last 5)
-                    self.last_confidences.append(confidence)
-                    if len(self.last_confidences) > 5:
-                        self.last_confidences.pop(0)
-                    
-                    print(f"Single-user confidence: {confidence}, threshold: {threshold}")
-                    if confidence > threshold:
-                        return self.single_user_name, confidence
-                    return "Unknown", confidence
-                except Exception as e:
-                    print(f"Error in single-user prediction: {str(e)}")
-                    return "Unknown", 0.0
-            
-            # Multi-user mode
-            try:
-                X_features = self._extract_features(X_scaled)
-                probas = self.ensemble.predict_proba(X_features)
-                
-                # For debugging - list all confidences
-                class_confidences = {cls: prob for cls, prob in zip(self.ensemble.classes_, probas[0])}
-                print(f"Class confidences: {class_confidences}")
-                
-                # Get prediction and confidence
-                prediction = self.ensemble.predict(X_features)[0]
-                confidence = probas[0][list(self.ensemble.classes_).index(prediction)]
-                
-                # Get the predicted class and confidence
-                pred_class = prediction
-                
-                # Much lower confidence threshold for registered users
-                base_threshold = 0.05  # Extremely low (was 0.10)
-                
-                # If prediction is a registered user, try direct similarity comparison
-                if self._is_user_name(pred_class) and pred_class in self.registered_user_faces:
-                    # Do additional direct similarity check
-                    direct_sim = self._compute_similarity_scores(X_pca, pred_class)
-                    
-                    # Blend the ensemble probability with direct similarity for registered users
-                    confidence = 0.7 * confidence + 0.3 * direct_sim  # Weight ensemble more
-                    
-                    # Ensure confidence is in the range [0,1]
-                    confidence = max(0.0, min(1.0, confidence))
-                    
-                    # Use a very low threshold for registered users
-                    threshold = base_threshold
-                    
-                    # Add temporal consistency for registered users
-                    if len(self.last_predictions) > 0:
-                        # If same user predicted multiple times in a row
-                        if pred_class in self.last_predictions:
-                            # Count occurrences
-                            occurrences = self.last_predictions.count(pred_class)
-                            
-                            # Boost confidence based on consistency
-                            confidence = min(confidence * (1.0 + 0.1 * occurrences), 1.0)  # Conservative boost, cap at 1.0
+                if model_path and os.path.exists(model_path):
+                    self.facenet = tf.saved_model.load(model_path)
                 else:
-                    # For AT&T subjects, use higher threshold
-                    threshold = 0.40  # Much higher threshold for AT&T subjects
-                    
-                    # If confidence is above threshold but below a higher threshold,
-                    # and we have registered users, check if any registered user has close confidence
-                    if confidence > threshold and confidence < 0.50 and self.user_names:
-                        # Get probability scores for registered users
-                        user_indices = [list(self.ensemble.classes_).index(name) 
-                                       for name in self.user_names if name in self.ensemble.classes_]
-                        if user_indices:
-                            user_probs = [probas[0][idx] for idx in user_indices]
-                            max_user_prob = max(user_probs)
-                            max_user_idx = user_indices[user_probs.index(max_user_prob)]
-                            
-                            # If probability is close enough, prefer the registered user
-                            # (Very aggressive preference for registered users)
-                            if max_user_prob > confidence * 0.4:
-                                pred_class = self.ensemble.classes_[max_user_idx]
-                                confidence = max_user_prob
-                
-                # Ensure final confidence is in the range [0,1]
-                confidence = max(0.0, min(1.0, confidence))
-                
-                # Update prediction history (keep last 5)
-                self.last_predictions.append(pred_class)
-                if len(self.last_predictions) > 5:
-                    self.last_predictions.pop(0)
-                
-                # Print diagnostics
-                print(f"Prediction: {pred_class}, Confidence: {confidence}, Threshold: {threshold}")
-                if confidence > threshold:
-                    return pred_class, confidence
-                return "Unknown", confidence
+                    # Use default path
+                    default_paths = [
+                        './facenet_keras.h5',
+                        './models/facenet_keras.h5'
+                    ]
+                    for path in default_paths:
+                        if os.path.exists(path):
+                            self.facenet = tf.keras.models.load_model(path)
+                            break
             except Exception as e:
-                print(f"Error in multi-user prediction: {str(e)}")
-                return "Unknown", 0.0
-        except Exception as e:
-            print(f"Error in prediction: {str(e)}")
-            return "Unknown", 0.0
+                print(f"Error loading FaceNet from TensorFlow: {e}")
+                # Fallback to OpenCV DNN
+                self.backend = 'opencv'
+                
+        # Initialize classifier based on method
+        if method == 'svm':
+            self.classifier = SVC(kernel='linear', probability=True)
+            # For single-person case
+            self.one_class_classifier = OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+        else:  # KNN
+            self.classifier = KNeighborsClassifier(n_neighbors=5)
     
-    def save_model(self, filepath):
-        """Save model to disk"""
-        if not self.trained:
-            raise ValueError("Model not trained yet!")
+    def _get_embedding(self, face_img):
+        """
+        Generate a 128-dimensional embedding vector for a face.
+        
+        Args:
+            face_img: Preprocessed face image (already aligned, normalized)
             
-        import joblib
-        model_data = {
-            'pca': self.pca,
-            'lda': self.lda,
-            'scaler': self.scaler,
-            'ensemble': self.ensemble,
-            'single_user_mode': self.single_user_mode,
-            'single_user_name': self.single_user_name,
-            'mean_face': self.mean_face,
-            'face_threshold': self.face_threshold,
-            'training_faces': self.training_faces,
-            'reconstruction_threshold': self.reconstruction_threshold,
-            'user_names': self.user_names,
-            'trained': self.trained,
-            'registered_user_faces': self.registered_user_faces
-        }
-        
-        joblib.dump(model_data, filepath)
-        print(f"Model saved to {filepath}")
-        
-    def load_model(self, filepath):
-        """Load model from disk"""
-        import joblib
-        
-        if not os.path.exists(filepath):
-            raise ValueError(f"Model file not found: {filepath}")
+        Returns:
+            128-dimensional embedding vector
+        """
+        try:
+            # Resize image to the expected input size
+            if self.backend == 'pytorch':
+                # Convert to correct format for PyTorch
+                if len(face_img.shape) == 2:  # Grayscale
+                    face_img = np.stack([face_img] * 3, axis=-1)  # Convert to 3 channel
+                
+                # Ensure right shape for PyTorch (B x C x H x W)
+                if face_img.shape[2] == 3:  # If channels are last
+                    face_img = np.transpose(face_img, (2, 0, 1))
+                
+                # Convert to PyTorch tensor
+                face_tensor = torch.from_numpy(face_img).unsqueeze(0).float()
+                
+                # Get embedding
+                with torch.no_grad():
+                    embedding = self.facenet(face_tensor).numpy().flatten()
+                
+            elif self.backend == 'tensorflow':
+                # Convert grayscale to RGB if needed
+                if len(face_img.shape) == 2:
+                    face_img = np.stack([face_img] * 3, axis=-1)
+                
+                # Ensure image is in range [0, 1]
+                if face_img.max() > 1.0:
+                    face_img = face_img / 255.0
+                
+                # Resize to FaceNet input size (160x160)
+                face_img = cv2.resize(face_img, (160, 160))
+                
+                # Add batch dimension
+                face_batch = np.expand_dims(face_img, axis=0)
+                
+                # Get embedding
+                embedding = self.facenet.predict(face_batch)[0]
+                
+            else:  # OpenCV fallback - use LBPH features
+                if len(face_img.shape) == 3:
+                    face_img = cv2.cvtColor(face_img, cv2.COLOR_BGR2GRAY)
+                
+                # Extract LBPH features (simple fallback)
+                lbph = cv2.face.LBPHFaceRecognizer_create()
+                hist = np.zeros(256)
+                for i in range(face_img.shape[0]):
+                    for j in range(face_img.shape[1]):
+                        hist[face_img[i, j]] += 1
+                
+                # Normalize histogram
+                hist = hist / hist.sum()
+                
+                # Pad to 128 dimensions for compatibility
+                embedding = np.zeros(128)
+                embedding[:min(256, 128)] = hist[:min(256, 128)]
             
-        model_data = joblib.load(filepath)
+            # L2 normalize the embedding
+            embedding = embedding / np.linalg.norm(embedding)
+            
+            return embedding
+            
+        except Exception as e:
+            print(f"Error generating face embedding: {e}")
+            # Return a zero vector on failure
+            return np.zeros(128)
+    
+    def train(self, face_images, face_labels):
+        """
+        Train the face recognition model using face images and their labels.
         
-        self.pca = model_data['pca']
-        self.lda = model_data['lda']
-        self.scaler = model_data['scaler']
-        self.ensemble = model_data['ensemble']
-        self.single_user_mode = model_data['single_user_mode']
-        self.single_user_name = model_data['single_user_name']
-        self.mean_face = model_data['mean_face']
-        self.face_threshold = model_data['face_threshold']
-        self.training_faces = model_data['training_faces']
-        self.reconstruction_threshold = model_data['reconstruction_threshold']
-        self.user_names = model_data['user_names']
-        self.trained = model_data['trained']
+        Args:
+            face_images: List of preprocessed face images
+            face_labels: List of corresponding labels
+            
+        Returns:
+            True if training was successful, False otherwise
+        """
+        try:
+            if len(face_images) == 0 or len(face_labels) == 0:
+                return False
+                
+            print(f"Training face recognizer with {len(face_images)} images")
+            
+            # Generate embeddings for all faces
+            embeddings = []
+            for face in face_images:
+                embedding = self._get_embedding(face)
+                embeddings.append(embedding)
+                
+            embeddings = np.array(embeddings)
+            
+            # Get unique labels
+            unique_labels = np.unique(face_labels)
+            
+            # Check if we have only one person
+            if len(unique_labels) == 1:
+                print("Single person mode: Using distance-based recognition")
+                self.single_person_mode = True
+                self.single_person_name = unique_labels[0]
+                self.reference_embeddings = embeddings
+                
+                # Calculate mean embedding and distances for threshold
+                self.mean_embedding = np.mean(embeddings, axis=0)
+                
+                # Train one-class SVM just for outlier detection
+                self.one_class_classifier.fit(embeddings)
+                
+                self.model_trained = True
+                return True
+            else:
+                # Multi-person mode: Use standard classifier
+                self.single_person_mode = False
+                self.single_person_name = None
+                self.reference_embeddings = None
+                
+                # Convert string labels to numeric using LabelEncoder
+                numeric_labels = self.label_encoder.fit_transform(face_labels)
+                
+                # Train classifier
+                self.classifier.fit(embeddings, numeric_labels)
+                self.model_trained = True
+                return True
+            
+        except Exception as e:
+            print(f"Error training face recognizer: {e}")
+            return False
+    
+    def predict(self, face_img):
+        """
+        Predict the identity of a face.
         
-        # Load registered user faces if available in saved model
-        if 'registered_user_faces' in model_data:
-            self.registered_user_faces = model_data['registered_user_faces']
-        else:
-            self.registered_user_faces = {}
-        
-        # Reset temporal consistency lists
-        self.last_predictions = []
-        self.last_confidences = []
-        
-        print(f"Model loaded from {filepath}")
-        return True 
+        Args:
+            face_img: Preprocessed face image
+            
+        Returns:
+            Tuple of (predicted_name, confidence_score)
+        """
+        try:
+            if not self.model_trained:
+                return "Unknown", 0.0
+                
+            # Get embedding for face
+            embedding = self._get_embedding(face_img)
+            
+            # Reshape for single prediction
+            embedding = embedding.reshape(1, -1)
+            
+            # Handle single person mode differently
+            if self.single_person_mode:
+                try:
+                    # Method 1: Use One-Class SVM for outlier detection
+                    # Negative score = outlier, positive = inlier
+                    svm_score = self.one_class_classifier.score_samples(embedding)[0]
+                    
+                    # Convert to probability-like score (higher = more likely)
+                    # Map from typically -1 to 1 range to 0 to 1
+                    svm_confidence = float(min(max((svm_score + 1) / 2, 0), 1))
+                    
+                    # Method 2: Use cosine similarity with mean embedding
+                    cosine_sim = float(np.dot(embedding.flatten(), self.mean_embedding) / (
+                        np.linalg.norm(embedding) * np.linalg.norm(self.mean_embedding)
+                    ))
+                    
+                    # Method 3: Use minimum distance to reference embeddings
+                    distances = []
+                    for ref_emb in self.reference_embeddings:
+                        dist = np.linalg.norm(embedding - ref_emb.reshape(1, -1))
+                        distances.append(float(dist))
+                    min_distance = min(distances)
+                    distance_score = float(1.0 / (1.0 + min_distance))  # Convert to similarity
+                    
+                    # Combine scores (weighted average)
+                    confidence = float(0.4 * svm_confidence + 0.3 * cosine_sim + 0.3 * distance_score)
+                    
+                    if confidence >= self.threshold:
+                        return self.single_person_name, confidence
+                    else:
+                        return "Unknown", confidence
+                except Exception as e:
+                    print(f"Error in single person prediction: {e}")
+                    return "Unknown", 0.0
+            else:
+                # Multi-person mode: Use standard classifier
+                if self.method == 'svm':
+                    # SVM with probabilities
+                    prediction = int(self.classifier.predict(embedding)[0])
+                    proba = self.classifier.predict_proba(embedding)[0]
+                    confidence = float(proba[prediction])
+                else:
+                    # KNN with distances
+                    neighbors = self.classifier.kneighbors(embedding, return_distance=True)
+                    distances = neighbors[0][0]
+                    indices = neighbors[1][0]
+                    
+                    # Convert distance to confidence (closer = higher confidence)
+                    avg_distance = float(np.mean(distances))
+                    confidence = float(1.0 / (1.0 + avg_distance))
+                    
+                    # Get prediction from most common neighbor class
+                    prediction = int(self.classifier.predict(embedding)[0])
+                
+                # Convert numeric prediction back to label
+                predicted_name = self.label_encoder.inverse_transform([prediction])[0]
+                
+                # Apply threshold
+                if confidence < self.threshold:
+                    return "Unknown", confidence
+                    
+                return predicted_name, confidence
+            
+        except Exception as e:
+            print(f"Error predicting face: {e}")
+            return "Unknown", 0.0
+            
+    def save_model(self, model_path):
+        """Save the trained model to disk"""
+        try:
+            if not self.model_trained:
+                return False
+                
+            import joblib
+            
+            # Create model directory if it doesn't exist
+            model_dir = os.path.dirname(model_path)
+            if model_dir:
+                os.makedirs(model_dir, exist_ok=True)
+            
+            # Save the model components
+            model_data = {
+                'classifier': self.classifier if not self.single_person_mode else self.one_class_classifier,
+                'label_encoder': self.label_encoder,
+                'method': self.method,
+                'threshold': self.threshold,
+                'single_person_mode': self.single_person_mode,
+                'single_person_name': self.single_person_name,
+                'reference_embeddings': self.reference_embeddings,
+                'mean_embedding': getattr(self, 'mean_embedding', None)
+            }
+            
+            joblib.dump(model_data, model_path)
+            return True
+            
+        except Exception as e:
+            print(f"Error saving model: {e}")
+            return False
+    
+    def load_model(self, model_path):
+        """Load a trained model from disk"""
+        try:
+            import joblib
+            
+            if not os.path.exists(model_path):
+                return False
+                
+            # Load the model components
+            model_data = joblib.load(model_path)
+            
+            self.single_person_mode = model_data.get('single_person_mode', False)
+            
+            if self.single_person_mode:
+                self.one_class_classifier = model_data['classifier']
+                self.single_person_name = model_data['single_person_name']
+                self.reference_embeddings = model_data['reference_embeddings']
+                self.mean_embedding = model_data.get('mean_embedding')
+            else:
+                self.classifier = model_data['classifier']
+                
+            self.label_encoder = model_data['label_encoder']
+            self.method = model_data['method']
+            self.threshold = model_data['threshold']
+            
+            self.model_trained = True
+            return True
+            
+        except Exception as e:
+            print(f"Error loading model: {e}")
+            return False
