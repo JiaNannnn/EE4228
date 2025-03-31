@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import os
 import math
+from scipy import ndimage
 try:
     import dlib
     DLIB_AVAILABLE = True
@@ -10,8 +11,28 @@ except ImportError:
     DLIB_AVAILABLE = False
 
 class FacePreprocessor:
-    def __init__(self, target_size=(100, 100)):
+    """
+    Face preprocessing class for normalizing facial images.
+    
+    Performs comprehensive preprocessing including:
+    - Grayscale conversion
+    - Face alignment (spatial position, rotation)
+    - Scale normalization
+    - Illumination normalization (multiple methods)
+    - Image enhancement
+    """
+    def __init__(self, target_size=(100, 100), illumination_method='clahe'):
+        """
+        Initialize face preprocessor.
+        
+        Args:
+            target_size (tuple): Target size for face images (width, height)
+            illumination_method (str): Illumination normalization method
+                                      'clahe', 'hist_eq', 'tan_triggs', or 'gamma'
+        """
         self.target_size = target_size
+        self.illumination_method = illumination_method
+        
         # Load facial landmark detector
         self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
         self.eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
@@ -34,7 +55,7 @@ class FacePreprocessor:
         else:
             self.shape_predictor = None
         
-        # Create histogram equalizer for more consistent illumination
+        # Create CLAHE for adaptive histogram equalization
         self.clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
         
         # For debug visualization
@@ -56,12 +77,39 @@ class FacePreprocessor:
             save_img = img
         cv2.imwrite(filename, save_img)
 
+    def ensure_grayscale(self, image):
+        """
+        Ensure image is in grayscale format.
+        
+        Args:
+            image (numpy.ndarray): Input image
+            
+        Returns:
+            numpy.ndarray: Grayscale image
+        """
+        # Convert to grayscale if needed
+        if len(image.shape) == 3:
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            self.save_debug_image(gray, "grayscale_conversion")
+            return gray
+        else:
+            return image  # Already grayscale
+
     def align_face_with_landmarks(self, image):
-        """Align face using facial landmarks (much more accurate than eye detection)"""
+        """
+        Align face using facial landmarks (much more accurate than eye detection).
+        Uses dlib's 68-point facial landmark detector for better alignment.
+        
+        Args:
+            image (numpy.ndarray): Input face image
+            
+        Returns:
+            numpy.ndarray: Aligned face image
+        """
         if not DLIB_AVAILABLE or self.shape_predictor is None:
             return self.align_face(image)  # Fall back to basic alignment
             
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
+        gray = self.ensure_grayscale(image)
         
         try:
             # Detect faces using dlib
@@ -146,8 +194,16 @@ class FacePreprocessor:
         return self.align_face(image)
 
     def align_face(self, image):
-        """Align face based on eye positions with better handling"""
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
+        """
+        Align face based on eye positions.
+        
+        Args:
+            image (numpy.ndarray): Input face image
+            
+        Returns:
+            numpy.ndarray: Aligned face image
+        """
+        gray = self.ensure_grayscale(image)
         
         # Try to detect eyes with multiple parameters to ensure consistency
         eyes = self.eye_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
@@ -221,7 +277,15 @@ class FacePreprocessor:
         return image
 
     def enhance_image(self, image):
-        """Enhance image quality with more robust methods"""
+        """
+        Enhance image quality with robust methods.
+        
+        Args:
+            image (numpy.ndarray): Input grayscale image
+            
+        Returns:
+            numpy.ndarray: Enhanced image
+        """
         # Make sure the image is uint8 before applying CLAHE
         if image.dtype != np.uint8:
             if np.max(image) <= 1.0:
@@ -231,57 +295,204 @@ class FacePreprocessor:
         else:
             image_uint8 = image
         
-        # Apply histogram equalization for better contrast
-        enhanced = self.clahe.apply(image_uint8)
-        self.save_debug_image(enhanced, "clahe")
-        
         # Apply bilateral filter to reduce noise while preserving edges
         # Use smaller values for more consistent results
-        enhanced = cv2.bilateralFilter(enhanced, 5, 35, 35)  # Less aggressive filtering
-        self.save_debug_image(enhanced, "bilateral")
+        denoised = cv2.bilateralFilter(image_uint8, 5, 35, 35)  # Less aggressive filtering
+        self.save_debug_image(denoised, "bilateral")
         
         # Apply additional Gaussian blur to reduce high-frequency noise
         # This makes the face representation more stable
-        enhanced = cv2.GaussianBlur(enhanced, (3, 3), 0)
-        self.save_debug_image(enhanced, "gaussian")
+        smoothed = cv2.GaussianBlur(denoised, (3, 3), 0)
+        self.save_debug_image(smoothed, "gaussian")
         
+        return smoothed
+
+    def apply_clahe(self, image):
+        """
+        Apply Contrast Limited Adaptive Histogram Equalization (CLAHE).
+        
+        Args:
+            image (numpy.ndarray): Input grayscale image (uint8)
+            
+        Returns:
+            numpy.ndarray: CLAHE-enhanced image
+        """
+        # Ensure image is uint8
+        if image.dtype != np.uint8:
+            if np.max(image) <= 1.0:
+                image = (image * 255).astype(np.uint8)
+            else:
+                image = image.astype(np.uint8)
+                
+        # Apply CLAHE
+        enhanced = self.clahe.apply(image)
+        self.save_debug_image(enhanced, "clahe")
         return enhanced
 
-    def normalize_illumination(self, image):
-        """Normalize illumination using simpler, more robust method"""
-        # Convert to float32
-        float_img = image.astype(np.float32)
+    def apply_histogram_equalization(self, image):
+        """
+        Apply global histogram equalization.
         
-        # Apply gamma correction first (helps with different lighting conditions)
-        # Convert to range [0,1] first
-        if np.max(float_img) > 1.0:
-            float_img = float_img / 255.0
+        Args:
+            image (numpy.ndarray): Input grayscale image (uint8)
             
-        gamma = 0.8
-        gamma_corrected = np.power(float_img, gamma)
-        self.save_debug_image(gamma_corrected, "gamma")
+        Returns:
+            numpy.ndarray: Histogram-equalized image
+        """
+        # Ensure image is uint8
+        if image.dtype != np.uint8:
+            if np.max(image) <= 1.0:
+                image = (image * 255).astype(np.uint8)
+            else:
+                image = image.astype(np.uint8)
+                
+        # Apply global histogram equalization
+        enhanced = cv2.equalizeHist(image)
+        self.save_debug_image(enhanced, "histeq")
+        return enhanced
+
+    def apply_tan_triggs_normalization(self, image, alpha=0.1, tau=10.0, gamma=0.2, sigma0=1.0, sigma1=2.0):
+        """
+        Apply Tan and Triggs normalization.
         
-        # Simple global normalization - more stable than local normalization
-        mean = np.mean(gamma_corrected)
-        std = np.std(gamma_corrected) + 1e-6  # Avoid division by zero
+        This is a more sophisticated illumination normalization technique that consists of:
+        1. Gamma correction
+        2. Difference of Gaussians (DoG) filtering
+        3. Contrast equalization
         
-        # Normalize globally
-        normalized = (gamma_corrected - mean) / std
+        Args:
+            image (numpy.ndarray): Input grayscale image
+            alpha (float): Controls DoG filtering
+            tau (float): Contrast equalization parameter
+            gamma (float): Gamma correction value
+            sigma0, sigma1 (float): Standard deviations for DoG filtering
+            
+        Returns:
+            numpy.ndarray: Normalized image
+        """
+        # Ensure float32 for calculations
+        if image.dtype != np.float32:
+            if image.dtype == np.uint8:
+                img_float = image.astype(np.float32) / 255.0
+            else:
+                img_float = image.astype(np.float32)
+        else:
+            img_float = image.copy()
+            
+        # 1. Gamma correction
+        img_gamma = np.power(img_float, gamma)
+        self.save_debug_image(img_gamma, "tan_triggs_gamma")
         
-        # Clip values to avoid extreme outliers
-        normalized = np.clip(normalized, -2.5, 2.5)  # Less aggressive clipping
+        # 2. Difference of Gaussians (DoG) filtering
+        # First Gaussian
+        img_blur0 = cv2.GaussianBlur(img_gamma, (0, 0), sigma0)
         
-        # Scale to [0, 1] range
-        normalized = (normalized + 2.5) / 5.0
+        # Second Gaussian
+        img_blur1 = cv2.GaussianBlur(img_gamma, (0, 0), sigma1)
+        
+        # DoG
+        dog = img_blur0 - alpha * img_blur1
+        self.save_debug_image(dog, "tan_triggs_dog")
+        
+        # 3. Contrast equalization
+        # Mean value subtraction
+        mean_val = np.mean(dog)
+        dog_centered = dog - mean_val
+        
+        # Contrast equalization
+        abs_dog = np.abs(dog_centered)
+        mean_abs = np.mean(abs_dog)
+        if mean_abs > 1e-6:  # Avoid division by zero
+            dog_eq = dog_centered / (mean_abs ** tau)
+        else:
+            dog_eq = dog_centered
+            
+        # Clip values to prevent extreme outliers
+        dog_eq = np.clip(dog_eq, -1.0, 1.0)
+        
+        # Scale back to [0,1] range
+        norm_img = (dog_eq + 1.0) / 2.0
         
         # Handle any remaining NaN or Inf values
-        normalized = np.nan_to_num(normalized, nan=0.5, posinf=1.0, neginf=0.0)
+        norm_img = np.nan_to_num(norm_img, nan=0.5, posinf=1.0, neginf=0.0)
         
-        self.save_debug_image(normalized, "normalized")
+        self.save_debug_image(norm_img, "tan_triggs_final")
+        return norm_img
+
+    def normalize_illumination(self, image):
+        """
+        Normalize illumination using the selected method.
+        
+        Args:
+            image (numpy.ndarray): Input grayscale image
+            
+        Returns:
+            numpy.ndarray: Normalized image (float32, range [0,1])
+        """
+        # Ensure image is in the right format based on the method
+        gray = self.ensure_grayscale(image)
+        
+        # Apply the selected normalization method
+        if self.illumination_method == 'clahe':
+            # CLAHE (Contrast Limited Adaptive Histogram Equalization)
+            normalized = self.apply_clahe(gray)
+            # Convert back to float [0,1] for consistency
+            if normalized.dtype == np.uint8:
+                normalized = normalized.astype(np.float32) / 255.0
+                
+        elif self.illumination_method == 'hist_eq':
+            # Global histogram equalization
+            normalized = self.apply_histogram_equalization(gray)
+            # Convert back to float [0,1] for consistency
+            if normalized.dtype == np.uint8:
+                normalized = normalized.astype(np.float32) / 255.0
+                
+        elif self.illumination_method == 'tan_triggs':
+            # Tan & Triggs normalization
+            normalized = self.apply_tan_triggs_normalization(gray)
+            
+        else:  # Default to gamma-based method
+            # Convert to float32
+            float_img = gray.astype(np.float32)
+            
+            # Apply gamma correction first (helps with different lighting conditions)
+            # Convert to range [0,1] first
+            if np.max(float_img) > 1.0:
+                float_img = float_img / 255.0
+                
+            gamma = 0.8
+            gamma_corrected = np.power(float_img, gamma)
+            self.save_debug_image(gamma_corrected, "gamma")
+            
+            # Simple global normalization - more stable than local normalization
+            mean = np.mean(gamma_corrected)
+            std = np.std(gamma_corrected) + 1e-6  # Avoid division by zero
+            
+            # Normalize globally
+            normalized = (gamma_corrected - mean) / std
+            
+            # Clip values to avoid extreme outliers
+            normalized = np.clip(normalized, -2.5, 2.5)  # Less aggressive clipping
+            
+            # Scale to [0, 1] range
+            normalized = (normalized + 2.5) / 5.0
+            
+            # Handle any remaining NaN or Inf values
+            normalized = np.nan_to_num(normalized, nan=0.5, posinf=1.0, neginf=0.0)
+        
+        self.save_debug_image(normalized, "illumination_normalized")
         return normalized
 
     def standardize_face(self, face):
-        """Apply standard face cropping to ensure consistency"""
+        """
+        Apply standard face cropping to ensure consistency.
+        
+        Args:
+            face (numpy.ndarray): Input normalized face image
+            
+        Returns:
+            numpy.ndarray: Standardized face image
+        """
         h, w = face.shape[:2]
         
         # Define standard face landmarks (rough approximations)
@@ -321,9 +532,16 @@ class FacePreprocessor:
         self.save_debug_image(face_standardized, "standardized")
         return face_standardized
 
-    def preprocess(self, image):
+    def preprocess(self, image, illumination_method=None):
         """
-        Preprocess face image with more consistent preprocessing
+        Preprocess face image with comprehensive preprocessing pipeline.
+        
+        Args:
+            image (numpy.ndarray): Input face image
+            illumination_method (str, optional): Override default illumination method
+            
+        Returns:
+            numpy.ndarray: Fully preprocessed face image
         """
         self.debug_counter += 1
         
@@ -346,58 +564,84 @@ class FacePreprocessor:
             # Save original image for debugging
             self.save_debug_image(image, "original")
 
-            # Convert to grayscale if needed
-            if len(image.shape) == 3:
-                gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            else:
-                gray = image.copy()  # Make a copy to avoid modifying original
+            # 1. Ensure grayscale
+            gray = self.ensure_grayscale(image)
             
-            self.save_debug_image(gray, "grayscale")
-                
             # Make sure we're working with uint8 images for OpenCV functions
             if gray.dtype != np.uint8:
                 if np.max(gray) <= 1.0:
-                    # FIXED: Handle NaN/Inf values before type conversion
+                    # Handle NaN/Inf values before type conversion
                     gray_float = gray * 255.0
                     gray_float = np.nan_to_num(gray_float, nan=127.0, posinf=255.0, neginf=0.0)
                     gray_float = np.clip(gray_float, 0, 255)
                     gray = gray_float.astype(np.uint8)
                 else:
-                    # FIXED: Check for NaN/Inf values
+                    # Check for NaN/Inf values
                     gray = np.nan_to_num(gray, nan=127.0, posinf=255.0, neginf=0.0)
                     gray = np.clip(gray, 0, 255)
                     gray = gray.astype(np.uint8)
             
-            # Resize first to make eye detection more consistent
+            # 2. Resize first to make eye detection more consistent
             initial_resize = cv2.resize(gray, (200, 200), interpolation=cv2.INTER_CUBIC)
             self.save_debug_image(initial_resize, "initial_resize")
             
-            # Try to align face using landmarks (falls back to basic alignment if needed)
+            # 3. Align face
             aligned = self.align_face_with_landmarks(initial_resize)
             
-            # Resize to target size
+            # 4. Resize to target size
             resized = cv2.resize(aligned, self.target_size, interpolation=cv2.INTER_CUBIC)
             self.save_debug_image(resized, "resized")
             
-            # Explicitly ensure it's uint8 for CLAHE
+            # Explicitly ensure it's uint8 for enhancement
             if resized.dtype != np.uint8:
-                # FIXED: Check for NaN/Inf values
+                # Check for NaN/Inf values
                 resized = np.nan_to_num(resized, nan=127.0, posinf=255.0, neginf=0.0)
                 resized = np.clip(resized, 0, 255)
                 resized = resized.astype(np.uint8)
                 
-            # Apply image enhancement
+            # 5. Apply image enhancement (reduces noise)
             enhanced = self.enhance_image(resized)
             
-            # Apply illumination normalization
-            normalized = self.normalize_illumination(enhanced)
+            # 6. Apply illumination normalization (override method if specified)
+            if illumination_method:
+                # Temporarily change the method
+                orig_method = self.illumination_method
+                self.illumination_method = illumination_method
+                normalized = self.normalize_illumination(enhanced)
+                self.illumination_method = orig_method
+            else:
+                normalized = self.normalize_illumination(enhanced)
             
-            # Apply face standardization as a final step
+            # 7. Apply face standardization as a final step
             standardized = self.standardize_face(normalized)
             
-            return standardized
+            # Ensure output is float32 normalized to [0,1] for consistent model input
+            if standardized.dtype == np.uint8:
+                final_image = standardized.astype(np.float32) / 255.0
+            else:
+                final_image = standardized.astype(np.float32)
+                
+            # Verify output shape matches target size
+            if final_image.shape[:2] != self.target_size[::-1]:  # OpenCV uses (height, width)
+                final_image = cv2.resize(final_image, self.target_size)
+                
+            return final_image
             
         except Exception as e:
             print(f"Error in preprocessing: {str(e)}")
+            import traceback
+            traceback.print_exc()
             # Return zeros in case of error
-            return np.zeros(self.target_size, dtype=np.float32) 
+            return np.zeros(self.target_size[::-1], dtype=np.float32)
+
+    def set_illumination_method(self, method):
+        """
+        Set the illumination normalization method.
+        
+        Args:
+            method (str): One of 'clahe', 'hist_eq', 'tan_triggs', or 'gamma'
+        """
+        if method in ['clahe', 'hist_eq', 'tan_triggs', 'gamma']:
+            self.illumination_method = method
+        else:
+            print(f"Invalid illumination method '{method}'. Using default.") 
