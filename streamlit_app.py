@@ -594,6 +594,158 @@ def user_management_page():
     else:
         st.info("No users registered yet.")
 
+def enrollment_page():
+    """Page for enrolling new users by capturing multiple face images"""
+    st.subheader("🔐 User Enrollment")
+    
+    # Add enrollment explanation
+    st.markdown("""
+    This page helps you enroll new users into the face recognition system.
+    For best results, capture at least 10 different images of the person's face:
+    - Try different head poses (looking slightly left, right, up, down)
+    - Try different facial expressions (neutral, smiling, etc.)
+    - Try different distances from the camera
+    - Try with and without glasses if applicable
+    """)
+    
+    # Enter the person's name
+    person_name = st.text_input("Enter person's name", key="enrollment_name")
+    
+    # Show video feed for enrollment
+    if person_name:
+        # Create person directory if needed
+        person_dir = os.path.join(gallery_dir, person_name)
+        os.makedirs(person_dir, exist_ok=True)
+        
+        # Count existing images
+        existing_images = len(glob.glob(os.path.join(person_dir, "*.jpg")))
+        st.write(f"Current images for {person_name}: {existing_images}/10+")
+        
+        # Progress bar
+        progress_bar = st.progress(min(1.0, existing_images / 10))
+        
+        col1, col2 = st.columns([3, 1])
+        
+        # Camera feed in the left column
+        with col1:
+            # Container for the video feed
+            video_feed = st.empty()
+            
+            # Get webcam feed and detect faces
+            if 'camera' not in st.session_state:
+                st.session_state.camera = cv2.VideoCapture(0)
+            
+            # Check if camera is working
+            if not st.session_state.camera.isOpened():
+                st.error("Could not access webcam. Please check your camera.")
+                return
+                
+            # Get the current frame from the webcam
+            ret, frame = st.session_state.camera.read()
+            
+            if not ret:
+                st.error("Failed to get image from webcam.")
+                return
+            
+            # Get detector based on settings
+            detector = get_current_detector()
+            
+            # Detect faces
+            faces = detector.detect_faces(frame)
+            
+            # Draw a rectangle around each face
+            frame_with_faces = frame.copy()
+            for (x, y, w, h) in faces:
+                # Draw a green rectangle around the face
+                cv2.rectangle(frame_with_faces, (x, y), (x+w, y+h), (0, 255, 0), 2)
+                
+                # Add status text
+                if len(faces) == 1:
+                    cv2.putText(
+                        frame_with_faces,
+                        "Ready to capture",
+                        (x, y - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.5,
+                        (0, 255, 0),
+                        2
+                    )
+                else:
+                    cv2.putText(
+                        frame_with_faces,
+                        "Multiple faces detected",
+                        (x, y - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.5,
+                        (0, 255, 255),
+                        2
+                    )
+            
+            # Convert to RGB for display (OpenCV uses BGR)
+            rgb_frame = cv2.cvtColor(frame_with_faces, cv2.COLOR_BGR2RGB)
+            
+            # Display the frame
+            video_feed.image(rgb_frame, channels="RGB", use_column_width=True)
+        
+        # Controls in the right column
+        with col2:
+            # Show the most recently captured face if available
+            latest_images = glob.glob(os.path.join(person_dir, "*.jpg"))
+            latest_images.sort(reverse=True)  # Most recent first
+            
+            if latest_images:
+                st.write("Latest capture:")
+                latest_image = Image.open(latest_images[0])
+                st.image(latest_image, width=150)
+            
+            # Capture button
+            col_a, col_b = st.columns(2)
+            with col_a:
+                capture_button = st.button("📸 Capture", key="enrollment_capture")
+            with col_b:
+                done_button = st.button("✅ Done", key="enrollment_done")
+            
+            # Capture logic
+            if capture_button:
+                # Only proceed if at least one face is detected
+                if faces:
+                    # Use the biggest face if multiple detected
+                    if len(faces) > 1:
+                        areas = [(f[2] * f[3]) for f in faces]
+                        face_rect = faces[np.argmax(areas)]
+                    else:
+                        face_rect = faces[0]
+                    
+                    # Extract the face and preprocess
+                    success = capture_and_save(frame, person_name)
+                    
+                    if success:
+                        st.success(f"Face captured for {person_name}!")
+                        
+                        # Update image count and progress
+                        existing_images = len(glob.glob(os.path.join(person_dir, "*.jpg")))
+                        progress_bar.progress(min(1.0, existing_images / 10))
+                    else:
+                        st.error("Failed to capture face. Please try again.")
+                else:
+                    st.warning("No face detected! Please make sure your face is visible.")
+            
+            if done_button:
+                existing_images = len(glob.glob(os.path.join(person_dir, "*.jpg")))
+                if existing_images < 10:
+                    st.warning(f"Only {existing_images} images captured. It's recommended to have at least 10 images.")
+                    if not st.button("Continue anyway"):
+                        return
+                
+                st.success(f"Enrollment complete for {person_name}! {existing_images} images captured.")
+                st.session_state.registered_users[person_name] = {
+                    "registration_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "images": existing_images
+                }
+                save_registered_users()
+                st.info("You can now train the model to recognize this person.")
+                st.balloons()
+
 def training_page():
     st.title("Face Recognition System - Training")
     
@@ -697,255 +849,227 @@ def training_page():
         finally:
             cap.release()
 
-def recognition_page():
-    """Face recognition page"""
-    st.title("Face Recognition")
+def recognize_video():
+    """Display webcam video with face recognition (enhanced version)"""
+    # Container for the video feed
+    video_feed = st.empty()
     
-    # Load model if not loaded
-    if not hasattr(st.session_state.recognizer, 'trained') or not st.session_state.recognizer.trained:
-        try:
-            if os.path.exists(st.session_state.model_path):
-                st.session_state.recognizer.load_model(st.session_state.model_path)
-                st.session_state.model_trained = True
-                
-                # Set appropriate threshold based on model type
-                if st.session_state.using_specialized_model:
-                    st.session_state.recognizer.face_threshold = 0.1  # Lower threshold for specialized model
-                    st.info("Using specialized model with adjusted threshold")
-                else:
-                    st.session_state.recognizer.face_threshold = 0.2  # Standard threshold
-            else:
-                st.warning("No trained model found. Please train the model first.")
-                return
-        except Exception as e:
-            st.error(f"Error loading model: {str(e)}")
-            return
-
-    # Initialize live streaming state
-    if 'is_streaming' not in st.session_state:
-        st.session_state.is_streaming = False
+    # Container for multiple face results
+    results_container = st.empty()
+    
+    # Status info
+    status_container = st.empty()
+    
+    # Confidence display
+    metrics_container = st.container()
+    
+    # Get webcam feed
+    if 'camera' not in st.session_state:
+        st.session_state.camera = cv2.VideoCapture(0)
+    
+    # Check if camera is working
+    if not st.session_state.camera.isOpened():
+        st.error("Could not access webcam. Please check your camera.")
+        return
         
-    # Advanced face alignment section
-    with st.expander("Face Alignment Settings", expanded=False):
-        # Check for dlib
-        if not DLIB_AVAILABLE:
-            st.warning("dlib is not installed. Advanced face alignment is not available.")
-            st.info("To enable advanced face alignment, install dlib with: pip install dlib")
-            st.session_state.use_face_alignment = False
-        else:
-            st.session_state.use_face_alignment = st.checkbox(
-                "Use Advanced Face Alignment",
-                value=st.session_state.use_face_alignment,
-                help="Uses facial landmarks for better face alignment"
+    # Get the current frame from the webcam
+    ret, frame = st.session_state.camera.read()
+    
+    if not ret or frame is None or frame.size == 0:
+        st.error("Failed to get valid image from webcam.")
+        return
+    
+    # Get detector based on settings
+    detector = get_current_detector()
+    
+    # Display frame dimensions for debugging
+    h, w = frame.shape[:2]
+    status = f"Frame dimensions: {w}x{h}"
+    
+    # Detect faces in the frame
+    start_time = time.time()
+    faces = detector.detect_faces(frame)
+    detection_time = time.time() - start_time
+    
+    # Update status
+    status += f" | Detection time: {detection_time:.3f}s"
+    
+    # Create a copy of the frame for drawing
+    frame_with_faces = frame.copy()
+    
+    # Results for all detected faces
+    all_results = []
+    
+    # Process each detected face
+    if faces:
+        status += f" | Faces detected: {len(faces)}"
+        
+        # For metrics display
+        metrics_vals = []
+        metrics_cols = []
+        
+        for i, (x, y, w, h) in enumerate(faces):
+            # Use face_preprocessor to process the face (ensures consistent processing)
+            face_roi = detector.get_face_roi(frame, (x, y, w, h))
+            
+            # Skip if face extraction failed
+            if face_roi is None or face_roi.size == 0:
+                continue
+                
+            # Time preprocessing
+            preprocess_start = time.time()
+            processed_face = preprocessor.preprocess(face_roi)
+            preprocess_time = time.time() - preprocess_start
+            
+            # Skip if preprocessing failed
+            if processed_face is None or processed_face.size == 0:
+                continue
+                
+            # Time recognition
+            recognition_start = time.time()
+            prediction = st.session_state.recognizer.predict(processed_face)
+            
+            # Unpack prediction
+            if len(prediction) == 2:  # Old model format
+                name, confidence = prediction
+                is_known = confidence > st.session_state.face_threshold
+            else:  # New model format with is_known flag
+                name, confidence, is_known = prediction
+                
+            recognition_time = time.time() - recognition_start
+            
+            # Determine color based on confidence
+            if is_known and name != "Unknown":
+                if confidence > 0.7:
+                    rect_color = (0, 255, 0)  # Green for high confidence
+                    text_color = (0, 255, 0)
+                elif confidence > 0.5:
+                    rect_color = (0, 255, 255)  # Yellow for medium confidence
+                    text_color = (0, 255, 255)
+                else:
+                    rect_color = (0, 165, 255)  # Orange for low confidence
+                    text_color = (0, 165, 255)
+            else:
+                rect_color = (0, 0, 255)  # Red for unknown
+                text_color = (0, 0, 255)
+                name = "Unknown"
+            
+            # Draw rectangle around face
+            cv2.rectangle(frame_with_faces, (x, y), (x+w, y+h), rect_color, 2)
+            
+            # Draw filled rectangle for text background
+            cv2.rectangle(frame_with_faces, (x, y-25), (x+w, y), rect_color, -1)
+            
+            # Add name and confidence
+            confidence_pct = int(confidence * 100)
+            label = f"{name} ({confidence_pct}%)"
+            cv2.putText(
+                frame_with_faces,
+                label,
+                (x+5, y-5),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.5,
+                (255, 255, 255),  # White text
+                1
             )
             
-            # Check if landmark model exists
-            landmark_file = "shape_predictor_68_face_landmarks.dat"
-            if st.session_state.use_face_alignment and not os.path.exists(landmark_file):
-                st.warning("Facial landmark model file not found")
-                if st.button("Download Landmark Model"):
-                    with st.spinner("Downloading facial landmark model..."):
-                        if download_dlib_model():
-                            st.success("Landmark model downloaded successfully!")
-                        else:
-                            st.error("Failed to download landmark model")
-
-    # Add start/stop streaming button
-    if not st.session_state.is_streaming:
-        if st.button("Start Live Recognition"):
-            st.session_state.is_streaming = True
-            st.rerun()
+            # Add to metrics for display
+            metrics_cols.append(name)
+            metrics_vals.append(confidence)
+            
+            # Store result
+            result_info = {
+                "name": name,
+                "confidence": confidence,
+                "is_known": is_known,
+                "rect": (x, y, w, h),
+                "processing_time": preprocess_time + recognition_time
+            }
+            all_results.append(result_info)
+            
+        # Display metrics if we have results
+        if metrics_cols:
+            with metrics_container:
+                cols = st.columns(len(metrics_cols))
+                for i, col in enumerate(cols):
+                    if i < len(metrics_cols):
+                        col.metric(
+                            label=metrics_cols[i], 
+                            value=f"{metrics_vals[i]:.2f}"
+                        )
     else:
-        if st.button("Stop Live Recognition"):
-            st.session_state.is_streaming = False
-            st.rerun()
-
-    # Video capture and recognition
-    if st.session_state.is_streaming:
-        video_placeholder = st.empty()
-        debug_placeholder = st.empty()
-        status_placeholder = st.empty()
+        status += " | No faces detected"
+    
+    # Convert to RGB for display (OpenCV uses BGR)
+    rgb_frame = cv2.cvtColor(frame_with_faces, cv2.COLOR_BGR2RGB)
+    
+    # Display the frame
+    video_feed.image(rgb_frame, channels="RGB", use_column_width=True)
+    
+    # Display status
+    status_container.text(status)
+    
+    # Display results for each face
+    if all_results:
+        results_text = "## Recognition Results\n\n"
+        for i, result in enumerate(all_results):
+            results_text += f"**Face {i+1}:** {result['name']} - Confidence: {result['confidence']:.2f} - "
+            results_text += f"Processing time: {result['processing_time']*1000:.1f}ms\n\n"
         
-        # Initialize camera
-        cap = cv2.VideoCapture(0)
-        
-        if not cap.isOpened():
-            st.error("Could not open webcam")
-            st.session_state.is_streaming = False
-            return
-
-        # Recognition loop
-        try:
-            # Recent predictions for temporal smoothing
-            recent_predictions = []
-            prediction_window = 5  # Number of frames to consider for smoothing
-            
-            while st.session_state.is_streaming:
-                ret, frame = cap.read()
-                if not ret:
-                    st.error("Failed to capture frame")
-                    break
-
-                # Convert to RGB for display
-                rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                
-                # Detect faces
-                detector = get_current_detector()
-                faces = detector.detect_faces(frame)
-                
-                # Process each detected face
-                for (x, y, w, h) in faces:
-                    try:
-                        # Draw rectangle around face
-                        cv2.rectangle(rgb_frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
-                        
-                        # Get face ROI and preprocess
-                        face_roi = detector.get_face_roi(frame, (x, y, w, h))
-                        
-                        # Create a debug copy of the face for visualization
-                        if len(face_roi.shape) == 2:  # Grayscale
-                            face_vis = cv2.cvtColor(face_roi, cv2.COLOR_GRAY2BGR)
-                        else:  # Already BGR
-                            face_vis = face_roi.copy()
-                            
-                        # Process the face with our preprocessor
-                        processed_face = preprocessor.preprocess(face_roi)
-                        
-                        # Handle NaN and inf values
-                        if np.isnan(processed_face).any():
-                            processed_face = np.nan_to_num(processed_face, nan=0.5)
-                        if np.isinf(processed_face).any():
-                            processed_face = np.clip(np.nan_to_num(processed_face, nan=0.5, posinf=1.0, neginf=0.0), 0.0, 1.0)
-                        
-                        # Recognize face
-                        prediction, confidence = st.session_state.recognizer.predict(processed_face)
-                        
-                        # Apply temporal smoothing
-                        recent_predictions.append((prediction, confidence))
-                        if len(recent_predictions) > prediction_window:
-                            recent_predictions.pop(0)
-                        
-                        # Get most common prediction in recent frames
-                        if len(recent_predictions) >= 3:
-                            pred_counts = {}
-                            for pred, conf in recent_predictions:
-                                if pred not in pred_counts:
-                                    pred_counts[pred] = {'count': 0, 'total_conf': 0}
-                                pred_counts[pred]['count'] += 1
-                                pred_counts[pred]['total_conf'] += conf
-                            
-                            # Find most common prediction with highest average confidence
-                            most_common = max(pred_counts.items(), 
-                                            key=lambda x: (x[1]['count'], x[1]['total_conf']))
-                            prediction = most_common[0]
-                            confidence = most_common[1]['total_conf'] / most_common[1]['count']
-                        
-                        # Ensure confidence is within [0,1] range
-                        confidence = max(0.0, min(1.0, confidence))
-                        
-                        # Display recognition results
-                        if prediction != "Unknown":
-                            # Show confidence as percentage
-                            conf_text = f"{confidence*100:.1f}%"
-                            label = f"{prediction} ({conf_text})"
-                            
-                            # Color code based on confidence
-                            if confidence > 0.5:
-                                color = (0, 255, 0)  # Green for high confidence
-                            elif confidence > 0.3:
-                                color = (255, 165, 0)  # Orange for medium confidence
-                            else:
-                                color = (255, 0, 0)  # Red for low confidence
-                                
-                            # Add label above face
-                            cv2.putText(rgb_frame, label, (x, y-10), 
-                                      cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
-                        else:
-                            # Show "Unknown" for unrecognized faces
-                            cv2.putText(rgb_frame, "Unknown", (x, y-10), 
-                                      cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-                            
-                    except Exception as e:
-                        st.session_state.debug_info += f"\nError in recognition: {str(e)}"
-                        continue
-                
-                # Display the frame
-                video_placeholder.image(rgb_frame, channels="RGB", use_container_width=True)
-                
-                # Update status
-                if faces:
-                    status_placeholder.success(f"Detected {len(faces)} face(s)")
-                else:
-                    status_placeholder.info("No faces detected")
-                
-                # Show debug info
-                with debug_placeholder.expander("Debug Information", expanded=False):
-                    st.text(st.session_state.debug_info)
-                
-                # Small delay to prevent high CPU usage
-                time.sleep(0.01)  # Reduced delay for smoother video
-                
-        except Exception as e:
-            st.error(f"Error in recognition loop: {str(e)}")
-        finally:
-            cap.release()
-            st.session_state.is_streaming = False
-            
-    # Add settings section
-    with st.expander("Recognition Settings"):
-        # Confidence threshold adjustment
-        new_threshold = st.slider(
-            "Recognition Confidence Threshold",
-            min_value=0.0,
-            max_value=1.0,
-            value=st.session_state.face_threshold,
-            step=0.05,
-            help="Lower values make recognition more sensitive but may increase false positives"
-        )
-        if new_threshold != st.session_state.face_threshold:
-            st.session_state.face_threshold = new_threshold
-            if hasattr(st.session_state.recognizer, 'face_threshold'):
-                st.session_state.recognizer.face_threshold = new_threshold
+        results_container.markdown(results_text)
+    else:
+        results_container.markdown("No faces recognized in this frame.")
 
 # Main app
 def main():
-    st.set_page_config(page_title="Face Recognition System", layout="wide")
-    
-    # Add title with version info
-    st.title("Face Recognition System")
-    if st.session_state.using_specialized_model:
-        st.info("Using specialized model for improved recognition")
+    # Set page config
+    st.set_page_config(
+        page_title="Face Recognition App",
+        page_icon="👤",
+        layout="wide"
+    )
     
     # Sidebar navigation
     st.sidebar.title("Navigation")
     pages = {
-        "User Management": user_management_page,
-        "Training": training_page,
-        "Recognition": recognition_page,
-        "Detector Settings": detector_settings_page
+        "🏠 Home": "home",
+        "👤 Recognition": "recognition",
+        "🔐 Enrollment": "enrollment",
+        "🧠 Training": "training",
+        "👥 User Management": "users",
+        "⚙️ Detector Settings": "detector"
     }
     
-    # Add model info to sidebar
-    st.sidebar.write("### Model Information")
-    if st.session_state.model_trained:
-        st.sidebar.success("Model Status: Trained")
-        if st.session_state.using_specialized_model:
-            st.sidebar.info("Using specialized model")
-            st.sidebar.write(f"Confidence Threshold: {st.session_state.face_threshold}")
-    else:
-        st.sidebar.warning("Model Status: Not Trained")
+    # Default to Home
+    default_page = "home"
     
-    # Navigation
+    # Get the page selection
     page = st.sidebar.radio("Go to", list(pages.keys()))
     
-    # Display the selected page
-    pages[page]()
+    # Main page display
+    st.title("Face Recognition System")
     
-    # Add debug expander at the bottom
-    with st.expander("Debug Information"):
-        if st.button("Clear Debug Info"):
-            st.session_state.debug_info = ""
-        st.text(st.session_state.debug_info)
+    # Show appropriate page based on selection
+    if page == "🏠 Home":
+        home_page()
+    elif page == "👤 Recognition":
+        recognition_page()
+    elif page == "🔐 Enrollment":
+        enrollment_page()
+    elif page == "🧠 Training":
+        training_page()
+    elif page == "👥 User Management":
+        user_management_page()
+    elif page == "⚙️ Detector Settings":
+        detector_settings_page()
+        
+    # Footer
+    st.sidebar.markdown("---")
+    st.sidebar.text("Made with ❤️ by Team EE4228")
+    
+    # Display debug info for development
+    if st.sidebar.checkbox("Show Debug Info", False):
+        st.sidebar.text(st.session_state.debug_info)
 
 if __name__ == "__main__":
     main()
@@ -974,4 +1098,187 @@ st.sidebar.write("""
     "Enabled" if st.session_state.use_att_database else "Disabled",
     st.session_state.att_data_weight,
     st.session_state.detector_type.upper()
-)) 
+))
+
+def home_page():
+    """Display the home page with application overview"""
+    st.markdown("""
+    ## Welcome to Face Recognition System
+    
+    This application demonstrates a complete face recognition pipeline, using traditional computer vision techniques:
+    
+    ### Key Features:
+    
+    - **Face Detection**: Using HOG or Viola-Jones (Haar Cascade) method
+    - **Face Preprocessing**: Alignment, illumination normalization, and standardization
+    - **Face Recognition**: Using PCA (Eigenfaces) and KNN classifier
+    
+    ### How to Use:
+    
+    1. **🔐 Enrollment**: Capture 10+ images of each person you want to recognize
+    2. **🧠 Training**: Train the recognition model on the captured images
+    3. **👤 Recognition**: Use live camera to recognize faces
+    4. **⚙️ Settings**: Configure detector parameters and other options
+    
+    ### Implementation Details:
+    
+    - **HOG-based Face Detector**: The Histogram of Oriented Gradients (HOG) detector computes gradients at each pixel, groups them into cells, and creates feature descriptors that are fed to a linear SVM for face/non-face classification.
+    
+    - **PCA + KNN Recognition (Eigenfaces)**: Principal Component Analysis reduces dimensionality by finding the principal components (eigenfaces) of the face dataset. K-Nearest Neighbors classification is then performed in this reduced space.
+    
+    - **Preprocessing Pipeline**: Includes grayscale conversion, face alignment using facial landmarks, illumination normalization (CLAHE, histogram equalization, or Tan & Triggs), and standardization.
+    """)
+    
+    # Model status information
+    st.markdown("## System Status")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("### Model Information")
+        if st.session_state.model_trained:
+            st.success("✅ Model Status: Trained")
+            if st.session_state.using_specialized_model:
+                st.info("Using specialized model")
+        else:
+            st.warning("⚠️ Model Status: Not Trained")
+            st.markdown("Go to the **Training** page to train a model.")
+    
+    with col2:
+        st.markdown("### User Information")
+        if st.session_state.registered_users:
+            st.success(f"✅ Registered Users: {len(st.session_state.registered_users)}")
+            for name in st.session_state.registered_users:
+                if "images" in st.session_state.registered_users[name]:
+                    img_count = st.session_state.registered_users[name]["images"]
+                    st.markdown(f"- **{name}**: {img_count} images")
+                else:
+                    st.markdown(f"- **{name}**")
+        else:
+            st.warning("⚠️ No users registered")
+            st.markdown("Go to the **Enrollment** page to register users.")
+    
+    # Add quick action buttons
+    st.markdown("## Quick Actions")
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        if st.button("⚡ Go to Recognition"):
+            st.session_state.current_page = "recognition"
+            st.rerun()
+    
+    with col2:
+        if st.button("👤 Enroll New User"):
+            st.session_state.current_page = "enrollment"
+            st.rerun()
+    
+    with col3:
+        if st.button("🧠 Train Model"):
+            st.session_state.current_page = "training"
+            st.rerun() 
+
+def recognition_page():
+    """Face recognition page with enhanced UI and multiple face recognition"""
+    st.subheader("👤 Face Recognition")
+    
+    # Load model if not loaded
+    if not hasattr(st.session_state.recognizer, 'trained') or not st.session_state.recognizer.trained:
+        try:
+            if os.path.exists(st.session_state.model_path):
+                success = st.session_state.recognizer.load_model(st.session_state.model_path)
+                if success:
+                    st.session_state.model_trained = True
+                    
+                    # Set appropriate threshold based on model type
+                    if st.session_state.using_specialized_model:
+                        st.session_state.face_threshold = 0.1  # Lower threshold for specialized model
+                        st.info("Using specialized model with adjusted threshold")
+                    else:
+                        st.session_state.face_threshold = 0.2  # Standard threshold
+                else:
+                    st.warning("Failed to load the model. Try training a new one.")
+                    return
+            else:
+                st.warning("No trained model found. Please train the model first.")
+                return
+        except Exception as e:
+            st.error(f"Error loading model: {str(e)}")
+            return
+    
+    # Advanced face alignment section
+    with st.expander("Face Alignment Settings", expanded=False):
+        # Check for dlib
+        if not DLIB_AVAILABLE:
+            st.warning("dlib is not installed. Advanced face alignment is not available.")
+            st.info("To enable advanced face alignment, install dlib with: pip install dlib")
+            st.session_state.use_face_alignment = False
+        else:
+            st.session_state.use_face_alignment = st.checkbox(
+                "Use Advanced Face Alignment",
+                value=st.session_state.use_face_alignment,
+                help="Uses facial landmarks for better face alignment"
+            )
+            
+            # Check if landmark model exists
+            landmark_file = "shape_predictor_68_face_landmarks.dat"
+            if st.session_state.use_face_alignment and not os.path.exists(landmark_file):
+                st.warning("Facial landmark model file not found")
+                if st.button("Download Landmark Model"):
+                    with st.spinner("Downloading facial landmark model..."):
+                        if download_dlib_model():
+                            st.success("Landmark model downloaded successfully!")
+                        else:
+                            st.error("Failed to download landmark model")
+    
+    # Advanced recognition settings
+    with st.expander("Recognition Settings", expanded=False):
+        # Confidence threshold adjustment
+        new_threshold = st.slider(
+            "Recognition Confidence Threshold",
+            min_value=0.0,
+            max_value=1.0,
+            value=st.session_state.face_threshold,
+            step=0.05,
+            help="Lower values make recognition more sensitive but may increase false positives"
+        )
+        if new_threshold != st.session_state.face_threshold:
+            st.session_state.face_threshold = new_threshold
+        
+        # Select detector type
+        detector_type = st.radio(
+            "Face Detector",
+            ["Viola-Jones (Haar)", "HOG (dlib)"],
+            index=1 if st.session_state.detector_type == "dlib" else 0,
+            help="HOG is generally more accurate but may be slower"
+        )
+        st.session_state.detector_type = "dlib" if "HOG" in detector_type else "viola_jones"
+    
+    # Start recognition section
+    st.markdown("### Live Recognition")
+    
+    # Initialize streaming state if needed
+    if 'is_streaming' not in st.session_state:
+        st.session_state.is_streaming = False
+    
+    # Start/stop buttons
+    col1, col2 = st.columns(2)
+    with col1:
+        if not st.session_state.is_streaming:
+            if st.button("▶️ Start Recognition"):
+                st.session_state.is_streaming = True
+                st.experimental_rerun()
+    with col2:
+        if st.session_state.is_streaming:
+            if st.button("⏹️ Stop Recognition"):
+                st.session_state.is_streaming = False
+                # Release camera resource
+                if 'camera' in st.session_state and st.session_state.camera is not None:
+                    st.session_state.camera.release()
+                    st.session_state.camera = None
+                st.experimental_rerun()
+    
+    # Run recognition if streaming is enabled
+    if st.session_state.is_streaming:
+        recognition_container = st.container()
+        with recognition_container:
+            recognize_video() 
